@@ -26,7 +26,7 @@ profile := webdavis
 repo := vim-xapprentice
 name := $(subst -,_,${repo})_prod
 img := ${profile}/${repo}
-tag := $$(git rev-parse origin/master)
+tag := $$(git rev-parse --short origin/master)
 HEAD := ${img}:${tag}
 latest := ${img}:latest
 
