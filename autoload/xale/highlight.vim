@@ -1,4 +1,4 @@
-function! ale#highlight#ToggleHighlight()
+function! xale#highlight#ToggleHighlight()
     if !exists('g:colors_name') || g:colors_name !~# 'xapprentice'
         echoerr 'For this feature to work xapprentice must be the colorscheme.'
         return 0
