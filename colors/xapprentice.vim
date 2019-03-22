@@ -80,7 +80,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight Comment          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Conceal')
-    highlight Constant         ctermbg=NONE ctermfg=208  guibg=NONE    guifg=#ff8700 | call s:FormatGroup('Constant')
+    highlight Constant         ctermbg=NONE ctermfg=172  guibg=NONE    guifg=#d78700 | call s:FormatGroup('Constant')
     highlight Error            ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('Error')
     highlight Identifier       ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Identifier')
     highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('Ignore')
@@ -118,10 +118,10 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight helpLeadBlank    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpLeadBlank')
     highlight helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpNormal')
 
-    highlight StatusLine       ctermbg=137  ctermfg=15   guibg=#af875f guifg=#ffffff | call s:FormatGroup('StatusLine')
+    highlight StatusLine       ctermbg=137  ctermfg=15   guibg=#af875f guifg=#c0c0c0 | call s:FormatGroup('StatusLine')
     highlight StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineNC')
 
-    highlight StatusLineTerm   ctermbg=101  ctermfg=15   guibg=#af875f guifg=#ffffff | call s:FormatGroup('StatusLineTerm')
+    highlight StatusLineTerm   ctermbg=101  ctermfg=15   guibg=#af875f guifg=#ffffdf | call s:FormatGroup('StatusLineTerm')
     highlight StatusLineTermNC ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineTermNC')
 
     highlight Visual           ctermbg=235  ctermfg=110  guibg=#262626 guifg=#8fafd7 | call s:FormatGroup('Visual')
@@ -133,12 +133,12 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     " highlight Function         ctermbg=NONE ctermfg=223  guibg=NONE    guifg=#ffdfaf | call s:FormatGroup('Function')
     highlight Function         ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Function')
     highlight SpecialKey       ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('SpecialKey')
-    highlight Title            ctermbg=NONE ctermfg=231  guibg=NONE    guifg=#ffffff | call s:FormatGroup('Title')
+    highlight Title            ctermbg=NONE ctermfg=231  guibg=NONE    guifg=#ffffdf | call s:FormatGroup('Title')
 
     highlight DiffAdd          ctermbg=235  ctermfg=108  guibg=#262626 guifg=#87af87 | call s:FormatGroup('DiffAdd')
     highlight DiffChange       ctermbg=235  ctermfg=103  guibg=#262626 guifg=#8787af | call s:FormatGroup('DiffChange')
     highlight DiffDelete       ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f | call s:FormatGroup('DiffDelete')
-    highlight DiffText         ctermbg=235  ctermfg=208  guibg=#262626 guifg=#ff8700 | call s:FormatGroup('DiffText')
+    highlight DiffText         ctermbg=235  ctermfg=172  guibg=#262626 guifg=#d78700 | call s:FormatGroup('DiffText')
 
     highlight IncSearch        ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('IncSearch')
     highlight Search           ctermbg=223  ctermfg=235  guibg=#ffdfaf guifg=#262626 | call s:FormatGroup('Search')
@@ -169,25 +169,25 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         highlight SpellBad          ctermbg=230  ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#af5f87 | call s:FormatGroup('SpellBad', 'undercurl')
         highlight SpellCap          ctermbg=73   ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#5fafaf | call s:FormatGroup('SpellCap', 'undercurl')
         highlight SpellLocal        ctermbg=65   ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#5f875f | call s:FormatGroup('SpellLocal', 'undercurl')
-        highlight SpellRare         ctermbg=208  ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#ff8700 | call s:FormatGroup('SpellRare', 'undercurl')
+        highlight SpellRare         ctermbg=172  ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#d78700 | call s:FormatGroup('SpellRare', 'undercurl')
     else
         highlight SpellBad          ctermbg=132  ctermfg=234  guibg=#af5f87 guifg=#1c1c1c guisp=NONE    | call s:FormatGroup('SpellBad', 'undercurl')
         highlight SpellCap          ctermbg=73   ctermfg=234  guibg=#5fafaf guifg=#1c1c1c guisp=NONE    | call s:FormatGroup('SpellCap', 'undercurl')
         highlight SpellLocal        ctermbg=65   ctermfg=234  guibg=#5f875f guifg=#1c1c1c guisp=NONE    | call s:FormatGroup('SpellLocal', 'undercurl')
-        highlight SpellRare         ctermbg=208  ctermfg=234  guibg=#ff8700 guifg=#1c1c1c guisp=NONE    | call s:FormatGroup('SpellRare', 'undercurl')
+        highlight SpellRare         ctermbg=172  ctermfg=234  guibg=#d78700 guifg=#1c1c1c guisp=NONE    | call s:FormatGroup('SpellRare', 'undercurl')
     endif
 
     if get(g:, 'xapprentice_ale', 1) ==? 1
         highlight ALEErrorSign      ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87  | call s:FormatGroup('ALEErrorSign')
         highlight ALEWarningSign    ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87  | call s:FormatGroup('ALEWarningSign')
-        highlight ALEInfoSign       ctermbg=NONE ctermfg=208  guibg=NONE    guifg=#ff8700  | call s:FormatGroup('ALEInfoSign')
+        highlight ALEInfoSign       ctermbg=NONE ctermfg=172  guibg=NONE    guifg=#d78700  | call s:FormatGroup('ALEInfoSign')
         highlight ALEErrorLine      ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEErrorLine')
         highlight ALEWarningLine    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEWarningLine')
         highlight ALEInfoLine       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEInfoLine')
     elseif g:xapprentice_ale ==? 2
         highlight ALEErrorSign      ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87  | call s:FormatGroup('ALEErrorSign')
         highlight ALEWarningSign    ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87  | call s:FormatGroup('ALEWarningSign')
-        highlight ALEInfoSign       ctermbg=NONE ctermfg=208  guibg=NONE    guifg=#ff8700  | call s:FormatGroup('ALEInfoSign')
+        highlight ALEInfoSign       ctermbg=NONE ctermfg=172  guibg=NONE    guifg=#d78700  | call s:FormatGroup('ALEInfoSign')
         highlight link ALEErrorLine ALEError
         highlight link ALEWarningLine ALEWarning
         highlight link ALEInfoLine ALEInfo
@@ -371,7 +371,7 @@ let g:terminal_ansi_colors = [
         \ '#8fafd7',
         \ '#8787af',
         \ '#5fafaf',
-        \ '#ffffff'
+        \ '#ffffdf'
         \ ]
 
 let links = [
