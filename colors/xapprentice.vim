@@ -81,9 +81,10 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Comment          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Conceal')
     highlight Constant         ctermbg=NONE ctermfg=172  guibg=NONE    guifg=#d78700 | call s:FormatGroup('Constant')
-    highlight Error            ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('Error')
+    highlight Error            ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('Error')
     highlight Identifier       ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Identifier')
     highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('Ignore')
+
     highlight PreProc          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('PreProc')
     highlight Special          ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call s:FormatGroup('Special')
     highlight Delimiter        ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call s:FormatGroup('Delimiter')
@@ -100,11 +101,11 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight PmenuSel         ctermbg=73   ctermfg=235  guibg=#5fafaf guifg=#262626 | call s:FormatGroup('PmenuSel')
     highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#5f8787 guifg=#5f8787 | call s:FormatGroup('PmenuThumb')
 
-    highlight ErrorMsg         ctermbg=132  ctermfg=235  guibg=#af5f87 guifg=#262626 | call s:FormatGroup('ErrorMsg')
-    highlight ModeMsg          ctermbg=108  ctermfg=235  guibg=#87af87 guifg=#262626 | call s:FormatGroup('ModeMsg')
+    highlight ErrorMsg         ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('ErrorMsg')
+    highlight ModeMsg          ctermbg=108  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('ModeMsg')
     highlight MoreMsg          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('MoreMsg')
-    highlight Question         ctermbg=NONE ctermfg=108  guibg=NONE    guifg=#87af87 | call s:FormatGroup('Question')
-    highlight WarningMsg       ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87 | call s:FormatGroup('WarningMsg')
+    highlight Question         ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Question')
+    highlight WarningMsg       ctermbg=NONE ctermfg=173  guibg=NONE    guifg=#d7875f | call s:FormatGroup('WarningMsg')
 
     highlight TabLine          ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('TabLine')
     highlight TabLineFill      ctermbg=238  ctermfg=238  guibg=#444444 guifg=#444444 | call s:FormatGroup('TabLineFill')
@@ -118,17 +119,17 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight helpLeadBlank    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpLeadBlank')
     highlight helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpNormal')
 
-    highlight StatusLine       ctermbg=137  ctermfg=15   guibg=#af875f guifg=#ffffdf | call s:FormatGroup('StatusLine')
+    highlight StatusLine       ctermbg=137  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call s:FormatGroup('StatusLine')
     highlight StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineNC')
 
-    highlight StatusLineTerm   ctermbg=101  ctermfg=15   guibg=#af875f guifg=#ffffdf | call s:FormatGroup('StatusLineTerm')
+    highlight StatusLineTerm   ctermbg=101  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call s:FormatGroup('StatusLineTerm')
     highlight StatusLineTermNC ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineTermNC')
 
     highlight Visual           ctermbg=235  ctermfg=110  guibg=#262626 guifg=#8fafd7 | call s:FormatGroup('Visual')
     highlight VisualNOS        ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('VisualNOS')
 
     highlight VertSplit        ctermbg=238  ctermfg=238  guibg=#444444 guifg=#444444 | call s:FormatGroup('VertSplit')
-    highlight WildMenu         ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('WildMenu')
+    highlight WildMenu         ctermbg=131  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('WildMenu')
 
     " highlight Function         ctermbg=NONE ctermfg=223  guibg=NONE    guifg=#ffdfaf | call s:FormatGroup('Function')
     highlight Function         ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Function')
@@ -143,7 +144,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight IncSearch        ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('IncSearch')
     highlight Search           ctermbg=223  ctermfg=235  guibg=#ffdfaf guifg=#262626 | call s:FormatGroup('Search')
 
-    highlight Directory        ctermbg=NONE ctermfg=73   guibg=NONE    guifg=#5fafaf | call s:FormatGroup('Directory')
+    highlight Directory        ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Directory')
 
     highlight SignColumn       ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call s:FormatGroup('SignColumn')
     highlight ColorColumn      ctermbg=234  ctermfg=NONE guibg=#1c1c1c guifg=NONE    | call s:FormatGroup('ColorColumn')
@@ -178,26 +179,29 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     endif
 
     if get(g:, 'xapprentice_ale', 1) ==? 1
-        highlight ALEErrorSign      ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87  | call s:FormatGroup('ALEErrorSign')
-        highlight ALEWarningSign    ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87  | call s:FormatGroup('ALEWarningSign')
-        highlight ALEInfoSign       ctermbg=NONE ctermfg=172  guibg=NONE    guifg=#d78700  | call s:FormatGroup('ALEInfoSign')
+        highlight ALEError          ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626  | call s:FormatGroup('ALEError')
+        highlight ALEErrorSign      ctermbg=234  ctermfg=131  guibg=#1c1c1c guifg=#af5f5f  | call s:FormatGroup('ALEErrorSign')
         highlight ALEErrorLine      ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEErrorLine')
+
+        highlight ALEWarning        ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEWarning')
+        highlight ALEWarningSign    ctermbg=234  ctermfg=173  guibg=#1c1c1c guifg=#d7875f  | call s:FormatGroup('ALEWarningSign')
         highlight ALEWarningLine    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEWarningLine')
+
+        highlight ALEInfo           ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEInfo')
+        highlight ALEInfoSign       ctermbg=234  ctermfg=173  guibg=#1c1c1c guifg=#d7875f  | call s:FormatGroup('ALEInfoSign')
         highlight ALEInfoLine       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEInfoLine')
-    elseif g:xapprentice_ale ==? 2
-        highlight ALEErrorSign      ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87  | call s:FormatGroup('ALEErrorSign')
-        highlight ALEWarningSign    ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87  | call s:FormatGroup('ALEWarningSign')
-        highlight ALEInfoSign       ctermbg=NONE ctermfg=172  guibg=NONE    guifg=#d78700  | call s:FormatGroup('ALEInfoSign')
-        highlight link ALEErrorLine ALEError
-        highlight link ALEWarningLine ALEWarning
-        highlight link ALEInfoLine ALEInfo
     else
-        highlight link ALEErrorSign ALEError
-        highlight link ALEWarningSign ALEWarning
-        highlight link ALEInfoSign ALEInfo
-        highlight ALEErrorLine      ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEErrorLine')
-        highlight ALEWarningLine    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEWarningLine')
-        highlight ALEInfoLine       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEInfoLine')
+        highlight ALEError          ctermbg=131  ctermfg=131  guibg=#af5f5f guifg=#262626  | call s:FormatGroup('ALEError')
+        highlight ALEErrorSign      ctermbg=235  ctermfg=131  guibg=#1c1c1c guifg=#af5f5f  | call s:FormatGroup('ALEErrorSign')
+        highlight ALEErrorLine      ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626  | call s:FormatGroup('ALEErrorLine')
+
+        highlight ALEWarning        ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEWarning')
+        highlight ALEWarningSign    ctermbg=235  ctermfg=173  guibg=#1c1c1c guifg=#d7875f  | call s:FormatGroup('ALEWarningSign')
+        highlight ALEWarningLine    ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEWarningLine')
+
+        highlight ALEInfo           ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEInfo')
+        highlight ALEInfoSign       ctermbg=235  ctermfg=173  guibg=#1c1c1c guifg=#d7875f  | call s:FormatGroup('ALEInfoSign')
+        highlight ALEInfoLine       ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEInfoLine')
     endif
 
     if get(g:, 'xapprentice_signify', 1)
@@ -263,7 +267,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     highlight helpLeadBlank    ctermbg=NONE        ctermfg=NONE        | call s:FormatGroup('helpLeadBlank')
     highlight helpNormal       ctermbg=NONE        ctermfg=NONE        | call s:FormatGroup('helpNormal')
 
-    highlight StatusLine       ctermbg=darkyellow  ctermfg=white       | call s:FormatGroup('StatusLine')
+    highlight StatusLine       ctermbg=yellow      ctermfg=black       | call s:FormatGroup('StatusLine')
     highlight StatusLineNC     ctermbg=darkgray    ctermfg=darkyellow  | call s:FormatGroup('StatusLineNC')
 
     highlight StatusLineterm   ctermbg=darkyellow  ctermfg=white       | call s:FormatGroup('StatusLineterm')
@@ -318,26 +322,29 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     highlight mkdID            ctermbg=NONE        ctermfg=red         | call s:FormatGroup('mkdID')
 
     if get(g:, 'xapprentice_ale', 1) ==? 1
-        highlight ALEErrorSign      ctermbg=black ctermfg=red        | call s:FormatGroup('ALEErrorSign')
-        highlight ALEWarningSign    ctermbg=black ctermfg=red        | call s:FormatGroup('ALEWarningSign')
-        highlight ALEInfoSign       ctermbg=black ctermfg=darkyellow | call s:FormatGroup('ALEInfoSign')
-        highlight ALEErrorLine      ctermbg=NONE  ctermfg=NONE       | call s:FormatGroup('ALEErrorLine')
-        highlight ALEWarningLine    ctermbg=NONE  ctermfg=NONE       | call s:FormatGroup('ALEWarningLine')
-        highlight ALEInfoLine       ctermbg=NONE  ctermfg=NONE       | call s:FormatGroup('ALEInfoLine')
-    elseif g:xapprentice_ale ==? 2
-        highlight ALEErrorSign      ctermbg=black ctermfg=red        | call s:FormatGroup('ALEErrorSign')
-        highlight ALEWarningSign    ctermbg=black ctermfg=red        | call s:FormatGroup('ALEWarningSign')
-        highlight ALEInfoSign       ctermbg=black ctermfg=darkyellow | call s:FormatGroup('ALEInfoSign')
-        highlight link ALEErrorLine               ALEError
-        highlight link ALEWarningLine             ALEWarning
-        highlight link ALEInfoLine                ALEInfo
+        highlight ALEError          ctermbg=lightred    ctermfg=black     | call s:FormatGroup('ALEError')
+        highlight ALEErrorSign      ctermbg=black      ctermfg=lightred   | call s:FormatGroup('ALEErrorSign')
+        highlight ALEErrorLine      ctermbg=NONE       ctermfg=NONE       | call s:FormatGroup('ALEErrorLine')
+
+        highlight ALEWarning        ctermbg=darkyellow ctermfg=black      | call s:FormatGroup('ALEWarning')
+        highlight ALEWarningSign    ctermbg=black      ctermfg=darkyellow | call s:FormatGroup('ALEWarningSign')
+        highlight ALEWarningLine    ctermbg=NONE       ctermfg=NONE       | call s:FormatGroup('ALEWarningLine')
+
+        highlight ALEInfo           ctermbg=darkyellow ctermfg=black      | call s:FormatGroup('ALEInfo')
+        highlight ALEInfoSign       ctermbg=black      ctermfg=darkyellow | call s:FormatGroup('ALEInfoSign')
+        highlight ALEInfoLine       ctermbg=NONE       ctermfg=NONE       | call s:FormatGroup('ALEInfoLine')
     else
-        highlight link ALEErrorSign               ALEError
-        highlight link ALEWarningSign             ALEWarning
-        highlight link ALEInfoSign                ALEInfo
-        highlight ALEErrorLine      ctermbg=NONE  ctermfg=NONE      | call s:FormatGroup('ALEErrorLine')
-        highlight ALEWarningLine    ctermbg=NONE  ctermfg=NONE      | call s:FormatGroup('ALEWarningLine')
-        highlight ALEInfoLine       ctermbg=NONE  ctermfg=NONE      | call s:FormatGroup('ALEInfoLine')
+        highlight ALEError          ctermbg=lightred    ctermfg=lightred  | call s:FormatGroup('ALEError')
+        highlight ALEErrorSign      ctermbg=black      ctermfg=lightred   | call s:FormatGroup('ALEErrorSign')
+        highlight ALEErrorLine      ctermbg=lightred    ctermfg=black     | call s:FormatGroup('ALEErrorLine')
+
+        highlight ALEWarning        ctermbg=darkyellow ctermfg=black      | call s:FormatGroup('ALEWarning')
+        highlight ALEWarningSign    ctermbg=black      ctermfg=darkyellow | call s:FormatGroup('ALEWarningSign')
+        highlight ALEWarningLine    ctermbg=darkyellow ctermfg=black      | call s:FormatGroup('ALEWarningLine')
+
+        highlight ALEInfo           ctermbg=darkyellow ctermfg=black      | call s:FormatGroup('ALEInfo')
+        highlight ALEInfoSign       ctermbg=black      ctermfg=darkyellow | call s:FormatGroup('ALEInfoSign')
+        highlight ALEInfoLine       ctermbg=darkyellow ctermfg=black      | call s:FormatGroup('ALEInfoLine')
     endif
 
     if get(g:, 'xapprentice_signify', 1)

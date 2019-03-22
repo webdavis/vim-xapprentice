@@ -71,7 +71,7 @@ test: $(TESTS)
 
 # Staging ...
 ########################################################################
-.PHONY: stop rm run docker
+.PHONY: stop rm stage docker
 
 # If the "user" has been added to the "docker" group then this can be changed to
 # "docker := docker". Alternatively, run make with the "-e" flag, like so:
@@ -82,7 +82,7 @@ docker := sudo docker
 
 # Constants.
 name := vim_xapprentice_stage
-stage := webdavis/vim-plugin:alpine
+img := webdavis/vim-plugin:alpine
 
 default: run
 
@@ -95,14 +95,14 @@ ifeq ($(shell ${docker} inspect --format "{{.State.Running}}" ${name} 2>/dev/nul
 endif
 
 rm: stop
-	$(info Deleting ${stage} ...)
-	@${docker} image rm -f ${stage}
+	$(info Deleting ${img} ...)
+	@${docker} image rm -f ${img}
 
-run: stop
-	$(info Running ${stage} ...)
+stage: stop
+	$(info Running ${img} ...)
 	@${docker} run -d -t \
 		--volume $(shell pwd)/..:/root/.vim \
 		--hostname alpine \
 		--name ${name} \
-		${stage}
+		${img}
 	@${docker} exec -t vim_xapprentice_stage /bin/bash './.vim/test/files/linker.sh'

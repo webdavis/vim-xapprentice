@@ -8,8 +8,6 @@ function! xale#highlight#ToggleHighlight()
     endif
 
     if get(g:, 'xapprentice_ale' , 1) ==? 1
-        let g:xapprentice_ale = 2
-    elseif g:xapprentice_ale ==? 2
         let g:xapprentice_ale = 0
     else
         let g:xapprentice_ale = 1
