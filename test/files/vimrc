@@ -53,6 +53,9 @@ set foldmethod=marker
 set diffopt+=vertical
 let colorcolumn=+1
 
+" Prevent .netrwhist file from being created.
+let g:netrw_dirhistmax = 0
+
 " View man pages using :Man command.
 runtime! ftplugin/man.vim
 
