@@ -1,0 +1,43 @@
+---
+# The Travis CI build for this project.
+
+dist: xenial
+language: minimal
+sudo: required
+
+# Don't build tagged commits. Tags are used to mark releases.
+branches:
+  except:
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+
+# The Docker containers keep the testing environment consistent.
+services:
+  - docker
+
+install:
+    # Build the image.
+  - make build
+
+script:
+  # Run the tests in Vim and Neovim.
+  - make test TARGET=vim
+  - make test TARGET=nvim
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - make push
+
+after_script:
+  # Inspect the management host environment post-test to aid in debugging.
+  - pwd
+  - ls -la ../
+  - ls -la ./
+
+    # Inspect the Docker container post-test to aid in debugging.
+  - docker exec -ti ${TAG} /bin/bash -c 'ls -AFl ./'
+  - docker exec -ti ${TAG} /bin/bash -c 'ls -AFlRI plugged ./.vim ./.vim/test'
+  - docker exec -ti ${TAG} /bin/bash -c 'ls -AFlRI ./.vim'
+  - docker exec -ti ${TAG} /bin/bash -c 'ls -AFlRI ./.vim/test'
+
+    # Clean up after the test.
+  - make remove
