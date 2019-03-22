@@ -87,5 +87,5 @@ $(editors):
 
 # Update Docker Hub with latest commit.
 push:
-	@:docker tag ${HEAD} ${latest}
-	@:docker push ${img}
+	@${docker} tag ${HEAD} ${latest}
+	@${docker} push ${img}
