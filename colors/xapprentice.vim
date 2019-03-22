@@ -151,7 +151,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight QuickFixLine     ctermbg=236  ctermfg=NONE guibg=#303030 guifg=NONE    | call s:FormatGroup('QuickFixLine')
     highlight qfLineNr         ctermbg=NONE ctermfg=137  guibg=NONE    guifg=#af875f | call s:FormatGroup('qfLineNr')
-    highlight qfFileName       ctermbg=NONE ctermfg=73   guibg=NONE    guifg=#5fafaf | call s:FormatGroup('rfFileName')
+    highlight qfFileName       ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('rfFileName')
     highlight qfError          ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('qfError')
 
     highlight ExtraWhitespace  ctermbg=132  ctermfg=NONE guibg=#af5f87 guifg=NONE    | call s:FormatGroup('ExtraWhitespace')
