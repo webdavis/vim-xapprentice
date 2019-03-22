@@ -26,16 +26,16 @@ $(NVIMPROG): RUN_PROG_TEST := $(PROG) -Nu setup.vim $(NO_INITS) --headless 2>/de
 $(NVIMPROG): clean test log report
 
 log:
-	@/bin/sh -c 'if grep --quiet --no-messages "FAILED" messages; then \
+	@/bin/sh -c 'if grep "FAILED" messages 1>/dev/null 2>&1; then \
 					if ! test -d ./logs; then mkdir -- logs; fi; \
 					cp messages logs/xapprentice-$(PROG)-`date --iso-8601=seconds`.log; \
 				fi'
 
 clean:
-	-rm -f --verbose *.res messages
+	-rm -f *.res messages
 
 cleanall: clean
-	-rm -rf --verbose logs
+	-rm -rf logs
 
 # Limitation: these tests only work if Vim/Neovim has been compiled with the +eval
 # feature. To check run the following in Vim/Neovim:
@@ -46,7 +46,7 @@ cleanall: clean
 report:
 	@/bin/sh -c 'if test -f messages; then cat messages; \
 					echo -en "\\nTest results: "; \
-					if grep --quiet --no-messages "FAILED" messages; then echo "FAILED"; exit 1; \
+					if grep "FAILED" messages 1>/dev/null 2>&1; then echo "FAILED"; exit 1; \
 					else echo "SUCCESS"; fi; \
 				fi'
 
