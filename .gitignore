@@ -10,6 +10,9 @@ tags
 # Ignore Vim session files
 Session.vim
 
+# vim-plug.
+plugged/
+
 # Ignore files created by `make`.
 *.res
 logs/
