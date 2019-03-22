@@ -1,0 +1,140 @@
+set shell=sh
+
+" Always use utf-8, instead of depending on the system locale.
+set encoding=utf-8
+
+" Use default shell on Windows to avoid segfault, caused by TUI.
+if has('win32')
+    let $SHELL = ''
+    let $TERM = ''
+    let &shell = empty($COMSPEC) ? exepath('cmd.exe') : $COMSPEC
+    set shellcmdflag=/s/c shellxquote=\" shellredir=>%s\ 2>&1
+    let &shellpipe = &shellredir
+endif
+
+" Set the runtimepath. To run plugin tests it's recommended to spin up the CentOS
+" environment with the provided Dockerfile.
+set runtimepath^=~/.vim
+if has('packages')
+   let &packpath = &runtimepath
+endif
+
+if has('mouse') | set mouse=ar | endif
+
+" Cycle through the list of available command tab completions.
+set wildmenu
+
+" Set pretty dividers.
+set fillchars+=vert:│,fold:―
+
+" Where colorcolumn starts if present.
+set textwidth=90
+
+" Number of spaces to use for each (auto)indent.
+set shiftwidth=4
+
+" Number of spaces <Tab> counts for while performing edits.
+set softtabstop=4
+
+" Display ↪ at the beginning of a wrapped line.
+let &showbreak = '↪ '
+
+" Number file lines relative to cursor position.
+set number relativenumber
+
+" Highlight cursorline if compiled with syntax.
+set cursorline
+
+" Vertical column to indicate where cursor is.
+set cursorcolumn
+
+" Set {{{ }}} as the opening/closing markers.
+set foldmethod=marker
+set diffopt+=vertical
+let colorcolumn=+1
+
+" View man pages using :Man command.
+runtime! ftplugin/man.vim
+
+" vim-plug is used to install other vim plugins that xapprentice has builtin support for.
+call plug#begin('~/.vim/plugged')
+
+Plug 'mhinz/vim-signify'
+Plug 'w0rp/ale'
+
+call plug#end()
+
+"filetype plugin indent on
+
+" Signify setup.
+let g:signify_sign_add = '+'
+let g:signify_sign_delete = '-'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change = '!'
+execute "let g:signify_sign_changedelete = '" g:signify_sign_change . g:signify_sign_delete . "'"
+let g:signify_sign_show_count = 1
+
+" ALE setup.
+let g:ale_sign_column_always = 1
+let b:ale_warn_about_trailing_whitespace = 1
+let b:ale_warn_about_trailing_blank_lines = 1
+
+" xapprentice configuration.
+let &t_Co = 256
+let $COLORTERM = 'truecolor'
+if has('termguicolors') | set termguicolors | endif
+
+syntax enable
+let g:xapprentice_bold_group = [
+    \ 'EndOfBuffer', 'NonText', 'Title', 'MoreMsg', 'ModeMsg', 'CursorLineNr',
+    \ 'Directory', 'Todo', 'Statement',
+    \ ]
+let g:xapprentice_standout_group = ['ColorColumn', 'Cursor']
+let g:xapprentice_italic_group = ['Comment',]
+let g:xapprentice_underline_group = ['Function',]
+
+" Default is 1.
+let g:xapprentice_signify = 1
+" Default is 1.
+let g:xapprentice_ale = 1
+
+colorscheme xapprentice
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" A mapping to quickly test color changes.
+function! s:SyntaxToggle() abort
+    if exists('g:syntax_on')
+        syntax off
+        echom 'syntax off'
+        return
+    endif
+    syntax enable
+    echom 'syntax enable'
+endfunction
+nnoremap <special> <F6> :<C-U>call <SID>SyntaxToggle()<CR>
+
+" A mapping to check the Syntax ID of the text under the cursor.
+function! s:SynStack() abort
+    if !exists('*synstack')
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction
+nnoremap <special> <F7> :<C-U>call <SID>SynStack()<CR>
+nnoremap <special> <F8> :<C-U>messages clear<CR>
+nnoremap <special> <F9> :<C-U>messages<CR>
+
+" Enable For Testing Autocommands: uncomment this function and run
+" `tail -f autocommand.log` to see autocmd's caught in real-time.
+" function! s:LogAutocommands(event_name) abort
+"     silent execute '!echo ' . a:event_name . ' >> autocommand.log'
+" endfunction
+
+" augroup Test
+"     autocmd!
+"     autocmd BufEnter * :echom "BufEnter " . expand('<amatch>') . " bufnr-" . bufnr('%')
+"     autocmd OptionSet textwidth :echom "OptionSet textwidth " . expand('<amatch>') .  " bufnr-" . bufnr('%')
+"     autocmd OptionSet hlsearch :echom "OptionSet textwidth " . expand('<amatch>') .  " bufnr-" . bufnr('%')
+"     autocmd OptionSet filetype :echom "OptionSet filetype " . expand('<amatch>') .  " bufnr-" . bufnr('%')
+" augroup END

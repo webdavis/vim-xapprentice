@@ -1,0 +1,16 @@
+# Ignore all ctags files.
+tags
+
+# Ignore Vim tags file.
+/doc/tags
+
+# Ignore Vim swap files.
+*.sw*
+
+# Ignore Vim session files
+Session.vim
+
+# Ignore files created by `make`.
+*.res
+logs/
+messages
