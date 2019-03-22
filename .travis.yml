@@ -14,14 +14,18 @@ branches:
 services:
   - docker
 
-install:
+before_install:
     # Build the image.
   - make build
 
+install:
+    # Build the image.
+  - make run
+
 script:
   # Run the tests in Vim and Neovim.
-  - make test TARGET=vim
-  - make test TARGET=nvim
+  - make vim
+  - make nvim
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin

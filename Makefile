@@ -44,7 +44,7 @@ remove: stop
 	-${docker} image rm -f ${HEAD}
 	-${docker} image rm -f ${latest}
 
-run: remove
+try: remove
 ifneq ($(shell curl --silent --fail -lSL https://index.docker.io/v1/repositories/${img}/tags/latest 2>&1),[])
 	@:$(info This image is not stored on Docker Hub yet.)
 	$(info Use the command "make push" to push the latest commit to Docker Hub.)
@@ -66,13 +66,26 @@ else
 	$(info Use the command "make run" to pull the latest image and start the container.)
 endif
 
+run:
+ifneq ($(shell ${docker} inspect --format "{{.State.Running}}" ${name} 2>/dev/null),true)
+	@${docker} run -d -t \
+		--hostname alpine \
+		--name ${name} \
+		${HEAD}
+endif
+
 # Submake.
 test:
 	$(info Running tests in local environment ...)
 	@$(MAKE) --directory=$@ $(TARGET)
 
+editors := vim nvim
+
+$(editors):
+	@/bin/sh -c 'if test $(@F) != vim -a $(@F) != nvim; then exit 1; fi'
+	${docker} exec -ti ${name} /bin/bash -c 'cd /root/.vim/plugged/vim-xapprentice/test && make --output-sync=recurse $(@F)'
 
 # Update Docker Hub with latest commit.
-push: build test
+push:
 	@:${docker} tag ${HEAD} ${latest}
 	@:${docker} push ${img}
