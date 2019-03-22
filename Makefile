@@ -17,7 +17,7 @@
 # - make docker [TARGET=target]
 #
 
-.PHONY: build stop remove run docker vim nvim
+.PHONY: stop remove run docker vim nvim
 
 
 # If the "user" has been added to the "docker" group then this can be changed to
@@ -29,13 +29,9 @@ docker := sudo docker
 
 # Constants.
 name := vim_xapprentice_stage
-stage := vim-xapprentice-stage
+stage := webdavis/vim-plugin:alpine
 
 default: run
-
-build:
-	$(info Building ${stage} ...)
-	@${docker} build --force-rm --tag ${stage} .
 
 stop:
 ifeq ($(shell ${docker} inspect --format "{{.State.Running}}" ${name} 2>/dev/null),true)
@@ -49,7 +45,7 @@ remove: stop
 	$(info Deleting ${stage} ...)
 	@${docker} image rm ${stage}
 
-run: stop build
+run: stop
 	$(info Running ${stage} ...)
 	@${docker} run -d -t \
 		--volume $(shell pwd):/root/.vim \
