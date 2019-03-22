@@ -86,6 +86,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('Ignore')
     highlight PreProc          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('PreProc')
     highlight Special          ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call s:FormatGroup('Special')
+    highlight Delimiter        ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call s:FormatGroup('Delimiter')
     highlight Statement        ctermbg=NONE ctermfg=110  guibg=NONE    guifg=#8fafd7 | call s:FormatGroup('Statement')
     highlight String           ctermbg=NONE ctermfg=108  guibg=NONE    guifg=#87af87 | call s:FormatGroup('String')
     highlight Todo             ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('Todo')
@@ -379,7 +380,6 @@ let links = [
         \ ['Conditional', 'Statement'],
         \ ['Debug', 'Special'],
         \ ['Define', 'PreProc'],
-        \ ['Delimiter', 'Special'],
         \ ['Exception', 'Statement'],
         \ ['Float', 'Number'],
         \ ['HelpCommand', 'Statement'],
