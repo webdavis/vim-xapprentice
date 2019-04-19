@@ -142,7 +142,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight DiffText         ctermbg=235  ctermfg=172  guibg=#262626 guifg=#d78700 | call s:FormatGroup('DiffText')
 
     highlight IncSearch        ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('IncSearch')
-    highlight Search           ctermbg=223  ctermfg=235  guibg=#ffdfaf guifg=#262626 | call s:FormatGroup('Search')
+    highlight Search           ctermbg=223  ctermfg=235  guibg=#bcbcbc guifg=#262626 | call s:FormatGroup('Search')
 
     highlight Directory        ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Directory')
 
