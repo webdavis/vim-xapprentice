@@ -80,7 +80,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight Comment          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Conceal')
-    highlight Constant         ctermbg=NONE ctermfg=172  guibg=NONE    guifg=#d78700 | call s:FormatGroup('Constant')
+    highlight Constant         ctermbg=NONE ctermfg=137  guibg=NONE    guifg=#af875f | call s:FormatGroup('Constant')
     highlight Error            ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('Error')
     highlight Identifier       ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Identifier')
     highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('Ignore')
@@ -96,10 +96,15 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight NonText          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('NonText')
 
-    highlight Pmenu            ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('Pmenu')
+    highlight Pmenu            ctermbg=237  ctermfg=250  guibg=#3a3a3a guifg=#bcbcbc | call s:FormatGroup('Pmenu')
     highlight PmenuSbar        ctermbg=240  ctermfg=NONE guibg=#585858 guifg=NONE    | call s:FormatGroup('PmenuSbar')
     highlight PmenuSel         ctermbg=73   ctermfg=235  guibg=#5fafaf guifg=#262626 | call s:FormatGroup('PmenuSel')
     highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#5f8787 guifg=#5f8787 | call s:FormatGroup('PmenuThumb')
+
+    if has('nvim')
+        " This requires coc.nvim to be installed.
+        highlight CocFloating      ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('CocFloating')
+    endif
 
     highlight ErrorMsg         ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('ErrorMsg')
     highlight ModeMsg          ctermbg=108  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('ModeMsg')
@@ -119,7 +124,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight helpLeadBlank    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpLeadBlank')
     highlight helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpNormal')
 
-    highlight StatusLine       ctermbg=137  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call s:FormatGroup('StatusLine')
+    highlight StatusLine       ctermbg=242  ctermfg=252  guibg=#6c6c6c guifg=#d0d0d0 | call s:FormatGroup('StatusLine')
     highlight StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineNC')
 
     highlight StatusLineTerm   ctermbg=101  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call s:FormatGroup('StatusLineTerm')
