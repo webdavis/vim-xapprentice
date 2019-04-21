@@ -124,7 +124,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight helpLeadBlank    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpLeadBlank')
     highlight helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpNormal')
 
-    highlight StatusLine       ctermbg=242  ctermfg=252  guibg=#6c6c6c guifg=#d0d0d0 | call s:FormatGroup('StatusLine')
+    highlight StatusLine       ctermbg=240  ctermfg=252  guibg=#585858 guifg=#d0d0d0 | call s:FormatGroup('StatusLine')
     highlight StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineNC')
 
     highlight StatusLineTerm   ctermbg=101  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call s:FormatGroup('StatusLineTerm')
