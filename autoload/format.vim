@@ -13,7 +13,7 @@ function! format#Group()
     let l:group.gui = []
     let l:group.term = []
 
-    function! l:group.AddAttribute(group, attribute)
+    function! l:group.Add(group, attribute)
         let self.cterm = split(substitute(matchstr(execute('highlight ' . a:group), 'cterm=.\{-}\ '), 'cterm=\| ', '', 'g'), ',')
         call add(self.cterm, a:attribute)
         call insert(self.cterm, 'cterm=NONE')
@@ -35,7 +35,7 @@ function! format#Group()
         execute 'highlight ' . a:group . ' ' . self.cterm . ' ' . self.gui . ' ' . self.term
     endfunction
 
-    function! l:group.RemoveAttribute(group, attribute)
+    function! l:group.Remove(group, attribute)
         let self.cterm = split(substitute(matchstr(execute('highlight ' . a:group), 'cterm=.\{-}\ '), 'cterm=\| ', '', 'g'), ',')
         if index(self.cterm, a:attribute) ==? -1
             return 0
@@ -61,9 +61,9 @@ function! format#Group()
     return l:group
 endfunction
 
-function! format#ToggleAttribute(attribute, bang, ...)
-    if !exists('g:colors_name') || g:colors_name !~# 'xapprentice'
-        echoerr 'For this feature to work xapprentice must be the colorscheme.'
+function! format#Set(attribute, bang, ...)
+    if !exists('g:colors_name') || g:colors_name !~# 'xapprentice_\(dark\|light\)'
+        echoerr 'For this feature to work an xapprentice colorscheme must be set.'
         return 0
     endif
 
@@ -74,10 +74,10 @@ function! format#ToggleAttribute(attribute, bang, ...)
             endif
 
             let l:group = format#Group()
-            if l:group.RemoveAttribute(l:g, a:attribute) ==? 1
+            if l:group.Remove(l:g, a:attribute) ==? 1
                 continue
             endif
-            call l:group.AddAttribute(l:g, a:attribute)
+            call l:group.Add(l:g, a:attribute)
         endfor
 	return 0
     elseif a:bang || get(g:, eval(string('xapprentice_' . a:attribute)) , 1)

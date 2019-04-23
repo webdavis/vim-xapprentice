@@ -1,6 +1,6 @@
 function! signify#highlight#ToggleHighlight(bang)
-    if !exists('g:colors_name') || g:colors_name !~# 'xapprentice'
-        echoerr 'For this feature to work xapprentice must be the colorscheme.'
+    if !exists('g:colors_name') || g:colors_name !~# 'xapprentice_\(dark\|light\)'
+        echoerr 'For this feature to work an xapprentice colorscheme must be set.'
         return 0
     elseif !exists('g:loaded_signify') || !has('signs') || &compatible
         echoerr 'For this feature to work vim-signify must be installed and loaded.'

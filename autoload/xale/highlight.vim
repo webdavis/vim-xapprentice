@@ -1,9 +1,9 @@
 function! xale#highlight#ToggleHighlight()
-    if !exists('g:colors_name') || g:colors_name !~# 'xapprentice'
-        echoerr 'For this feature to work xapprentice must be the colorscheme.'
+    if !exists('g:colors_name') || g:colors_name !~# 'xapprentice_\(dark\|light\)'
+        echoerr 'For this feature to work an xapprentice colorscheme must be set.'
         return 0
     elseif !exists('g:loaded_ale') || !has('signs') || &compatible
-        echom 'For this feature to work ALE must be installed and/or loaded.'
+        echoerr 'For this feature to work ALE must be installed and loaded.'
         return 0
     endif
 
