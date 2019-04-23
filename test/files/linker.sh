@@ -23,4 +23,4 @@ ln -sf "${home}/plug.vim" "${home}/.vim/autoload/plug.vim"
 
 # This allows you to run :PlugInstall without entering Vim. See this post:
 # https://github.com/junegunn/vim-plug/issues/225
-nvim -E -s -u "${home}/.vimrc" +PlugInstall +qall
+nvim -u "${home}/.vimrc" +PlugInstall +qall
