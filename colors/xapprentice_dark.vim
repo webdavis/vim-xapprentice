@@ -15,7 +15,7 @@ highlight clear
 if exists('syntax_on')
     syntax reset
 endif
-let g:colors_name = 'xapprentice'
+let g:colors_name = 'xapprentice_dark'
 
 " Attributes.
 let s:vim_attributes = ['bold', 'italic', 'underline', 'reverse', 'inverse', 'standout', 'undercurl']
@@ -130,21 +130,20 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight StatusLineTerm   ctermbg=101  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call s:FormatGroup('StatusLineTerm')
     highlight StatusLineTermNC ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineTermNC')
 
-    highlight Visual           ctermbg=235  ctermfg=110  guibg=#262626 guifg=#8fafd7 | call s:FormatGroup('Visual')
+    highlight Visual           ctermbg=110  ctermfg=235  guibg=#8fafd7 guifg=#262626 | call s:FormatGroup('Visual')
     highlight VisualNOS        ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('VisualNOS')
 
     highlight VertSplit        ctermbg=238  ctermfg=238  guibg=#444444 guifg=#444444 | call s:FormatGroup('VertSplit')
     highlight WildMenu         ctermbg=131  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('WildMenu')
 
-    " highlight Function         ctermbg=NONE ctermfg=223  guibg=NONE    guifg=#ffdfaf | call s:FormatGroup('Function')
     highlight Function         ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Function')
     highlight SpecialKey       ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('SpecialKey')
     highlight Title            ctermbg=NONE ctermfg=231  guibg=NONE    guifg=#ffffdf | call s:FormatGroup('Title')
 
-    highlight DiffAdd          ctermbg=235  ctermfg=108  guibg=#262626 guifg=#87af87 | call s:FormatGroup('DiffAdd')
-    highlight DiffChange       ctermbg=235  ctermfg=103  guibg=#262626 guifg=#8787af | call s:FormatGroup('DiffChange')
-    highlight DiffDelete       ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f | call s:FormatGroup('DiffDelete')
-    highlight DiffText         ctermbg=235  ctermfg=172  guibg=#262626 guifg=#d78700 | call s:FormatGroup('DiffText')
+    highlight DiffAdd          ctermbg=108  ctermfg=235  guibg=#87af87 guifg=#262626 | call s:FormatGroup('DiffAdd')
+    highlight DiffChange       ctermbg=103  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('DiffChange')
+    highlight DiffDelete       ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('DiffDelete')
+    highlight DiffText         ctermbg=172  ctermfg=235  guibg=#d78700 guifg=#262626 | call s:FormatGroup('DiffText')
 
     highlight IncSearch        ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('IncSearch')
     highlight Search           ctermbg=223  ctermfg=235  guibg=#bcbcbc guifg=#262626 | call s:FormatGroup('Search')
@@ -435,7 +434,7 @@ let links = [
 
 augroup Apprentice
     autocmd!
-    autocmd ColorScheme * if expand("<amatch>") == "xapprentice"
+    autocmd ColorScheme * if expand('<amatch>') =~# 'xapprentice_\(dark|light\)'
                             \ | for link in links | execute 'hi link' link[0] link[1] | endfor
                             \ | else | for link in links | execute 'hi link' link[0] 'NONE' | endfor
                             \ | endif
