@@ -16,10 +16,11 @@ let s:save_cpoptions = &cpoptions
 set cpoptions&vim
 
 " Toggles the following format options on and off.
-command! -bar -bang -nargs=* XBold call format#ToggleAttribute('bold', <bang>0, <q-args>)
-command! -bar -bang -nargs=* XItalic call format#ToggleAttribute('italic', <bang>0, <q-args>)
-command! -bar -bang -nargs=* XUnderline call format#ToggleAttribute('underline', <bang>0, <q-args>)
-command! -bar -bang -nargs=* XStandout call format#ToggleAttribute('standout', <bang>0, <q-args>)
+command! -bar -bang -nargs=* XBold call format#Set('bold', <bang>0, <q-args>)
+command! -bar -bang -nargs=* XItalic call format#Set('italic', <bang>0, <q-args>)
+command! -bar -bang -nargs=* XUnderline call format#Set('underline', <bang>0, <q-args>)
+command! -bar -bang -nargs=* XStandout call format#Set('standout', <bang>0, <q-args>)
+command! -bar -bang -nargs=* XBackground call background#Switch()
 
 " Toggles enhanced Signify colors on and off.
 command! -bar -bang -nargs=0 XSignifyHighlight call xsignify#highlight#ToggleHighlight(<bang>0)

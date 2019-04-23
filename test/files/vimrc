@@ -101,7 +101,7 @@ let g:xapprentice_signify = 1
 " Default is 1.
 let g:xapprentice_ale = 1
 
-colorscheme xapprentice
+colorscheme xapprentice_light
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
