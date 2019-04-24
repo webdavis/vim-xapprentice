@@ -73,16 +73,13 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight Normal           ctermbg=15   ctermfg=237  guibg=#ffffff guifg=#3a3a3a | call s:FormatGroup('Normal')
     highlight Terminal         ctermbg=15   ctermfg=237  guibg=#ffffff guifg=#3a3a3a | call s:FormatGroup('Terminal')
-    highlight LineNr           ctermbg=255  ctermfg=245  guibg=#eeeeee guifg=#8a8a8a | call s:FormatGroup('LineNr')
-    highlight FoldColumn       ctermbg=255  ctermfg=242  guibg=#eeeeee guifg=#6c6c6c | call s:FormatGroup('FoldColumn')
-    highlight Folded           ctermbg=255  ctermfg=242  guibg=#eeeeee guifg=#6c6c6c | call s:FormatGroup('Folded')
     highlight MatchParen       ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('MatchParen')
 
     highlight Comment          ctermbg=NONE ctermfg=246  guibg=NONE    guifg=#949494 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=15   guibg=NONE    guifg=#ffffff | call s:FormatGroup('Conceal')
     highlight Constant         ctermbg=NONE ctermfg=140  guibg=NONE    guifg=#af87d7 | call s:FormatGroup('Constant')
     highlight Number           ctermbg=NONE ctermfg=140  guibg=NONE    guifg=#af87d7 | call s:FormatGroup('Constant')
-    highlight Error            ctermbg=210  ctermfg=236  guibg=#ff8787 guifg=#303030 | call s:FormatGroup('Error')
+    highlight Error            ctermbg=236  ctermfg=210  guibg=#303030 guifg=#ff8787 | call s:FormatGroup('Error')
     highlight Identifier       ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005faf | call s:FormatGroup('Identifier')
     highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('Ignore')
 
@@ -115,7 +112,6 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight TabLine          ctermbg=247  ctermfg=240  guibg=#9e9e9e guifg=#585858 | call s:FormatGroup('TabLine')
     highlight TabLineFill      ctermbg=252  ctermfg=236  guibg=#d0d0d0 guifg=#303030 | call s:FormatGroup('TabLineFill')
-    highlight TabLineSel       ctermbg=75   ctermfg=236  guibg=#5fafff guifg=#303030 | call s:FormatGroup('TabLineSel')
 
     highlight Cursor           ctermbg=67   ctermfg=NONE guibg=#5f87af guifg=NONE    | call s:FormatGroup('Cursor')
     highlight CursorColumn     ctermbg=255  ctermfg=NONE guibg=#eeeeee guifg=NONE    | call s:FormatGroup('CursorColumn')
@@ -147,11 +143,9 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight DiffText         ctermbg=215  ctermfg=236  guibg=#ffaf5f guifg=#303030 | call s:FormatGroup('DiffText')
 
     highlight IncSearch        ctermbg=211  ctermfg=236  guibg=#ff87af guifg=#303030 | call s:FormatGroup('IncSearch')
-    highlight Search           ctermbg=253  ctermfg=236  guibg=#ffdf5f guifg=#303030 | call s:FormatGroup('Search')
 
     highlight Directory        ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005f87 | call s:FormatGroup('Directory')
 
-    highlight SignColumn       ctermbg=255  ctermfg=242  guibg=#eeeeee guifg=#6c6c6c | call s:FormatGroup('SignColumn')
     highlight ColorColumn      ctermbg=NONE ctermfg=75  guibg=NONE     guifg=#5fafff | call s:FormatGroup('ColorColumn')
 
     highlight QuickFixLine     ctermbg=195  ctermfg=NONE guibg=#dfffff guifg=NONE    | call s:FormatGroup('QuickFixLine')
@@ -170,6 +164,22 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight mkdURL           ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('mkdURL')
     highlight mkdInlineURL     ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('mkdInlineURL')
     highlight mkdID            ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('mkdID')
+
+    if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
+        highlight TabLineSel       ctermbg=75   ctermfg=236  guibg=#8fc7ff guifg=#303030 | call s:FormatGroup('TabLineSel')
+        highlight Search           ctermbg=253  ctermfg=236  guibg=#ffe88f guifg=#303030 | call s:FormatGroup('Search')
+        highlight LineNr           ctermbg=255  ctermfg=245  guibg=#f6f6f6 guifg=#8a8a8a | call s:FormatGroup('LineNr')
+        highlight FoldColumn       ctermbg=255  ctermfg=242  guibg=#f6f6f6 guifg=#6c6c6c | call s:FormatGroup('FoldColumn')
+        highlight Folded           ctermbg=255  ctermfg=242  guibg=#f6f6f6 guifg=#6c6c6c | call s:FormatGroup('Folded')
+        highlight SignColumn       ctermbg=255  ctermfg=242  guibg=#f6f6f6 guifg=#6c6c6c | call s:FormatGroup('SignColumn')
+    else
+        highlight TabLineSel       ctermbg=75   ctermfg=236  guibg=#5fafff guifg=#303030 | call s:FormatGroup('TabLineSel')
+        highlight Search           ctermbg=253  ctermfg=236  guibg=#ffdf5f guifg=#303030 | call s:FormatGroup('Search')
+        highlight LineNr           ctermbg=255  ctermfg=245  guibg=#eeeeee guifg=#8a8a8a | call s:FormatGroup('LineNr')
+        highlight FoldColumn       ctermbg=255  ctermfg=242  guibg=#eeeeee guifg=#6c6c6c | call s:FormatGroup('FoldColumn')
+        highlight Folded           ctermbg=255  ctermfg=242  guibg=#eeeeee guifg=#6c6c6c | call s:FormatGroup('Folded')
+        highlight SignColumn       ctermbg=255  ctermfg=242  guibg=#eeeeee guifg=#6c6c6c | call s:FormatGroup('SignColumn')
+    endif
 
     if has('gui_running')
         highlight SpellBad          ctermbg=230  ctermfg=236  guibg=NONE    guifg=#303030 guisp=#af87af | call s:FormatGroup('SpellBad', 'undercurl')
