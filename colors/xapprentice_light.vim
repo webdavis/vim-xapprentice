@@ -433,7 +433,7 @@ let s:links = [
         \ ['markdownListMarker', 'Constant'],
         \ ['mkdURL', 'markdownUrl'],
         \ ['mkdHeading', 'htmlH1'],
-        \ ['mkdListItem', 'Constant'],
+        \ ['mkdListItem', 'Identifier'],
         \ ['xmlTag', 'Statement'],
         \ ['xmlTagName', 'Statement'],
         \ ['xmlEndTag', 'Statement'],
