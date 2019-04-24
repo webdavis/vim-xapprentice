@@ -412,6 +412,7 @@ let s:links = [
         \ ['htmlItalic', 'Normal'],
         \ ['markdownHeadingDelimiter', 'htmlH1'],
         \ ['markdownCode', 'SpecialKey'],
+        \ ['markdownCodeBlock', 'Comment'],
         \ ['markdownItalic', 'Error'],
         \ ['markdownUrl', 'PreProc'],
         \ ['mkdURL', 'markdownUrl'],
