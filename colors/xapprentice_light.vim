@@ -152,9 +152,9 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Directory        ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005f87 | call s:FormatGroup('Directory')
 
     highlight SignColumn       ctermbg=255  ctermfg=242  guibg=#eeeeee guifg=#6c6c6c | call s:FormatGroup('SignColumn')
-    highlight ColorColumn      ctermbg=NONE ctermfg=252 guibg=NONE     guifg=#d0d0d0 | call s:FormatGroup('ColorColumn')
+    highlight ColorColumn      ctermbg=NONE ctermfg=75  guibg=NONE     guifg=#5fafff | call s:FormatGroup('ColorColumn')
 
-    highlight QuickFixLine     ctermbg=236  ctermfg=NONE guibg=#d0d0d0 guifg=NONE    | call s:FormatGroup('QuickFixLine')
+    highlight QuickFixLine     ctermbg=195  ctermfg=NONE guibg=#dfffff guifg=NONE    | call s:FormatGroup('QuickFixLine')
     highlight qfLineNr         ctermbg=NONE ctermfg=237  guibg=NONE    guifg=#3a3a3a | call s:FormatGroup('qfLineNr')
     highlight qfFileName       ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005f87 | call s:FormatGroup('rfFileName')
     highlight qfError          ctermbg=NONE ctermfg=210  guibg=NONE    guifg=#ff8787 | call s:FormatGroup('qfError')
