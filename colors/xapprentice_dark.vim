@@ -72,13 +72,12 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     set background=dark
 
     highlight Normal           ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc | call s:FormatGroup('Normal')
-    highlight Terminal         ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc | call s:FormatGroup('Terminal')
     highlight LineNr           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call s:FormatGroup('LineNr')
     highlight FoldColumn       ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call s:FormatGroup('FoldColumn')
     highlight Folded           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call s:FormatGroup('Folded')
     highlight MatchParen       ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87 | call s:FormatGroup('MatchParen')
 
-    highlight Comment          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('Comment')
+    highlight Comment          ctermbg=NONE ctermfg=239  guibg=NONE    guifg=#4e4e4e | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Conceal')
     highlight Constant         ctermbg=NONE ctermfg=137  guibg=NONE    guifg=#af875f | call s:FormatGroup('Constant')
     highlight Error            ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f | call s:FormatGroup('Error')
@@ -94,7 +93,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Type             ctermbg=NONE ctermfg=103  guibg=NONE    guifg=#8787af | call s:FormatGroup('Type')
     highlight Underlined       ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Underlined', 'underline')
 
-    highlight NonText          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('NonText')
+    highlight NonText          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#4e4e4e | call s:FormatGroup('NonText')
 
     highlight Pmenu            ctermbg=237  ctermfg=250  guibg=#3a3a3a guifg=#bcbcbc | call s:FormatGroup('Pmenu')
     highlight PmenuSbar        ctermbg=240  ctermfg=NONE guibg=#585858 guifg=NONE    | call s:FormatGroup('PmenuSbar')
@@ -163,12 +162,8 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight DebugPC          ctermbg=67   ctermfg=NONE guibg=#5f87af guifg=NONE    | call s:FormatGroup('DebugPC')
     highlight DebugBreakpoint  ctermbg=131  ctermfg=NONE guibg=#af5f5f guifg=NONE    | call s:FormatGroup('DebugBreakpoint')
 
-    " Markdown code.
-    highlight mkdHeading       ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('mkdHeading', 'bold')
+    " HTML
     highlight htmlH1           ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('htmlH1', 'bold')
-    highlight mkdURL           ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('mkdURL')
-    highlight mkdInlineURL     ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('mkdInlineURL')
-    highlight mkdID            ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('mkdID')
 
     if has('gui_running')
         highlight SpellBad          ctermbg=230  ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#af5f87 | call s:FormatGroup('SpellBad', 'undercurl')
@@ -227,7 +222,6 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     set background=dark
 
     highlight Normal           ctermbg=NONE        ctermfg=white       | call s:FormatGroup('Normal')
-    highlight Terminal         ctermbg=NONE        ctermfg=white       | call s:FormatGroup('Terminal')
 
     highlight Comment          ctermbg=NONE        ctermfg=gray        | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE        ctermfg=white       | call s:FormatGroup('Conceal')
@@ -385,21 +379,21 @@ let g:terminal_ansi_colors = [
         \ '#ffffdf'
         \ ]
 
-let links = [
+let s:links = [
         \ ['Boolean', 'Constant'],
         \ ['Character', 'Constant'],
+        \ ['Number', 'Constant'],
+        \ ['Float', 'Number'],
         \ ['Conditional', 'Statement'],
         \ ['Debug', 'Special'],
         \ ['Define', 'PreProc'],
         \ ['Exception', 'Statement'],
-        \ ['Float', 'Number'],
         \ ['HelpCommand', 'Statement'],
         \ ['HelpExample', 'Statement'],
         \ ['Include', 'PreProc'],
         \ ['Keyword', 'Statement'],
         \ ['Label', 'Statement'],
         \ ['Macro', 'PreProc'],
-        \ ['Number', 'Constant'],
         \ ['Operator', 'Statement'],
         \ ['PreCondit', 'PreProc'],
         \ ['Repeat', 'Statement'],
@@ -416,10 +410,14 @@ let links = [
         \ ['htmlTag', 'htmlTagName'],
         \ ['htmlBold', 'Normal'],
         \ ['htmlItalic', 'Normal'],
+        \ ['markdownHeadingDelimiter', 'htmlH1'],
+        \ ['markdownCode', 'SpecialKey'],
+        \ ['markdownItalic', 'Error'],
+        \ ['markdownUrl', 'PreProc'],
+        \ ['mkdURL', 'markdownUrl'],
         \ ['xmlTag', 'Statement'],
         \ ['xmlTagName', 'Statement'],
         \ ['xmlEndTag', 'Statement'],
-        \ ['markdownItalic', 'Preproc'],
         \ ['asciidocQuotedEmphasized', 'Preproc'],
         \ ['diffBDiffer', 'WarningMsg'],
         \ ['diffCommon', 'WarningMsg'],
@@ -434,9 +432,9 @@ let links = [
 
 augroup Apprentice
     autocmd!
-    autocmd ColorScheme * if expand('<amatch>') =~# 'xapprentice_\(dark|light\)'
-                            \ | for link in links | execute 'hi link' link[0] link[1] | endfor
-                            \ | else | for link in links | execute 'hi link' link[0] 'NONE' | endfor
+    autocmd ColorScheme * if expand('<amatch>') =~# 'xapprentice_dark'
+                            \ | for link in s:links | execute 'hi link' link[0] link[1] | endfor
+                            \ | else | for link in s:links | execute 'hi link' link[0] 'NONE' | endfor
                             \ | endif
 augroup END
 

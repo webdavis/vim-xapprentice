@@ -82,7 +82,6 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     endif
 
     highlight Normal           ctermbg=15   ctermfg=237  guibg=#ffffff guifg=#3a3a3a | call s:FormatGroup('Normal')
-    highlight Terminal         ctermbg=15   ctermfg=237  guibg=#ffffff guifg=#3a3a3a | call s:FormatGroup('Terminal')
     execute 'highlight LineNr     ctermbg=255  ctermfg=245  guibg=' . s:lightgray . ' guifg=#8a8a8a' | call s:FormatGroup('LineNr')
     execute 'highlight FoldColumn ctermbg=255  ctermfg=242  guibg=' . s:lightgray . ' guifg=#6c6c6c' | call s:FormatGroup('FoldColumn')
     execute 'highlight Folded     ctermbg=255  ctermfg=242  guibg=' . s:lightgray . ' guifg=#6c6c6c' | call s:FormatGroup('Folded')
@@ -238,7 +237,6 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     set background=dark
 
     highlight Normal           ctermbg=NONE        ctermfg=white       | call s:FormatGroup('Normal')
-    highlight Terminal         ctermbg=NONE        ctermfg=white       | call s:FormatGroup('Terminal')
 
     highlight Comment          ctermbg=NONE        ctermfg=gray        | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE        ctermfg=white       | call s:FormatGroup('Conceal')
@@ -396,21 +394,21 @@ let g:terminal_ansi_colors = [
         \ '#ffffdf'
         \ ]
 
-let links = [
+let s:links = [
         \ ['Boolean', 'Constant'],
         \ ['Character', 'Constant'],
+        \ ['Number', 'Constant'],
+        \ ['Float', 'Number'],
         \ ['Conditional', 'Statement'],
         \ ['Debug', 'Special'],
         \ ['Define', 'PreProc'],
         \ ['Exception', 'Statement'],
-        \ ['Float', 'Number'],
         \ ['HelpCommand', 'Statement'],
         \ ['HelpExample', 'Statement'],
         \ ['Include', 'PreProc'],
         \ ['Keyword', 'Statement'],
         \ ['Label', 'Statement'],
         \ ['Macro', 'PreProc'],
-        \ ['Number', 'Constant'],
         \ ['Operator', 'Statement'],
         \ ['PreCondit', 'PreProc'],
         \ ['Repeat', 'Statement'],
@@ -427,10 +425,14 @@ let links = [
         \ ['htmlTag', 'htmlTagName'],
         \ ['htmlBold', 'Normal'],
         \ ['htmlItalic', 'Normal'],
+        \ ['markdownHeadingDelimiter', 'htmlH1'],
+        \ ['markdownCode', 'SpecialKey'],
+        \ ['markdownItalic', 'Error'],
+        \ ['markdownUrl', 'PreProc'],
+        \ ['mkdURL', 'markdownUrl'],
         \ ['xmlTag', 'Statement'],
         \ ['xmlTagName', 'Statement'],
         \ ['xmlEndTag', 'Statement'],
-        \ ['markdownItalic', 'Preproc'],
         \ ['asciidocQuotedEmphasized', 'Preproc'],
         \ ['diffBDiffer', 'WarningMsg'],
         \ ['diffCommon', 'WarningMsg'],
@@ -445,9 +447,9 @@ let links = [
 
 augroup Apprentice
     autocmd!
-    autocmd ColorScheme * if expand('<amatch>') =~# 'xapprentice_\(dark|light\)'
-                            \ | for link in links | execute 'hi link' link[0] link[1] | endfor
-                            \ | else | for link in links | execute 'hi link' link[0] 'NONE' | endfor
+    autocmd ColorScheme * if expand('<amatch>') =~# 'xapprentice_light'
+                            \ | for link in s:links | execute 'hi link' link[0] link[1] | endfor
+                            \ | else | for link in s:links | execute 'hi link' link[0] 'NONE' | endfor
                             \ | endif
 augroup END
 
