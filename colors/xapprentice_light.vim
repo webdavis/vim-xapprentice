@@ -91,7 +91,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Delimiter        ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Delimiter')
     highlight Statement        ctermbg=NONE ctermfg=26   guibg=NONE    guifg=#005fd7 | call s:FormatGroup('Statement')
     highlight String           ctermbg=NONE ctermfg=29   guibg=NONE    guifg=#00875f | call s:FormatGroup('String')
-    highlight Todo             ctermbg=NONE ctermfg=115  guibg=NONE    guifg=#87d7af | call s:FormatGroup('Todo')
+    highlight Todo             ctermbg=115  ctermfg=237  guibg=#87d7af guifg=#3a3a3a | call s:FormatGroup('Todo')
     highlight Type             ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Type')
     highlight Underlined       ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('Underlined', 'underline')
 
