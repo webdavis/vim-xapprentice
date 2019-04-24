@@ -417,6 +417,7 @@ let s:links = [
         \ ['markdownUrl', 'PreProc'],
         \ ['markdownListMarker', 'Constant'],
         \ ['mkdURL', 'markdownUrl'],
+        \ ['mkdHeading', 'htmlH1'],
         \ ['xmlTag', 'Statement'],
         \ ['xmlTagName', 'Statement'],
         \ ['xmlEndTag', 'Statement'],
