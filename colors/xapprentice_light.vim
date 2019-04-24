@@ -107,7 +107,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         highlight CocFloating      ctermbg=238  ctermfg=236  guibg=#d0d0d0 guifg=#3a3a3a | call s:FormatGroup('CocFloating')
     endif
 
-    highlight ErrorMsg         ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af0000 | call s:FormatGroup('ErrorMsg')
+    highlight ErrorMsg         ctermbg=NONE ctermfg=196  guibg=NONE    guifg=#ff005f | call s:FormatGroup('ErrorMsg')
     highlight ModeMsg          ctermbg=108  ctermfg=15   guibg=#5f87af guifg=#ffffff | call s:FormatGroup('ModeMsg')
     highlight MoreMsg          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('MoreMsg')
     highlight Question         ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Question')
