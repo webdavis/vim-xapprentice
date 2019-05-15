@@ -6,6 +6,7 @@ if &g:compatible || v:version <? 700
     finish
 endif
 
+" sdfsfsfd
 " Save the users compatible-options so that they may be restored later.
 let s:save_cpoptions = &g:cpoptions
 set cpoptions&vim
@@ -103,6 +104,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     if has('nvim')
         " This requires coc.nvim to be installed.
         highlight CocFloating      ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('CocFloating')
+        highlight HighlightedyankRegion ctermbg=108 ctermfg=235 guibg=#87af87 guifg=#262626 | call s:FormatGroup('HighlightedyankRegion')
     endif
 
     highlight ErrorMsg         ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('ErrorMsg')
