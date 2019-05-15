@@ -75,10 +75,13 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:lightyellow = '#ffe88f'
         let s:lightblue = '#c7e3ff'
         let s:lightgray = '#f9f9f9'
+        highlight String   guibg=#efffef guifg=#5f8700 | call s:FormatGroup('String')
+        highlight Operator guibg=#ebefff guifg=#005faf | call s:FormatGroup('String')
     else
         let s:lightyellow = '#ffdf5f'
         let s:lightblue = '#5fafff'
         let s:lightgray = '#eeeeee'
+        highlight String ctermbg=NONE ctermfg=64 guibg=NONE guifg=#5f8700 | call s:FormatGroup('String')
     endif
 
     highlight Normal           ctermbg=15   ctermfg=237  guibg=#ffffff guifg=#3a3a3a | call s:FormatGroup('Normal')
@@ -89,8 +92,8 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight Comment          ctermbg=NONE ctermfg=102  guibg=NONE    guifg=#878787 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=15   guibg=NONE    guifg=#ffffff | call s:FormatGroup('Conceal')
-    highlight Constant         ctermbg=NONE ctermfg=140  guibg=NONE    guifg=#af87d7 | call s:FormatGroup('Constant')
-    highlight Number           ctermbg=NONE ctermfg=140  guibg=NONE    guifg=#af87d7 | call s:FormatGroup('Constant')
+    highlight Constant         ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Constant')
+    highlight Number           ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Constant')
     highlight Error            ctermbg=236  ctermfg=210  guibg=#303030 guifg=#ff8787 | call s:FormatGroup('Error')
     highlight Identifier       ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005faf | call s:FormatGroup('Identifier')
     highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('Ignore')
@@ -98,10 +101,9 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight PreProc          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('PreProc')
     highlight Special          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Special')
     highlight Delimiter        ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Delimiter')
-    highlight Statement        ctermbg=NONE ctermfg=162  guibg=NONE    guifg=#d70087 | call s:FormatGroup('Statement')
-    highlight String           ctermbg=194  ctermfg=237  guibg=#3a3a3a guifg=#dfffdf | call s:FormatGroup('String')
+    highlight Statement        ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005f87 | call s:FormatGroup('Statement')
     highlight Todo             ctermbg=115  ctermfg=237  guibg=#87d7af guifg=#3a3a3a | call s:FormatGroup('Todo')
-    highlight Type             ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005f87 | call s:FormatGroup('Type')
+    highlight Type             ctermbg=NONE ctermfg=234  guibg=NONE    guifg=#1c1c1c | call s:FormatGroup('Type')
     highlight Underlined       ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('Underlined', 'underline')
 
     highlight NonText          ctermbg=NONE ctermfg=248  guibg=NONE    guifg=#a8a8a8 | call s:FormatGroup('NonText')
@@ -146,7 +148,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight VertSplit        ctermbg=247  ctermfg=247  guibg=#9e9e9e guifg=#9e9e9e | call s:FormatGroup('VertSplit')
     execute 'highlight WildMenu ctermbg=75 ctermfg=236 guibg=' . s:lightblue . ' guifg=#303030' | call s:FormatGroup('WildMenu')
 
-    highlight Function         ctermbg=NONE ctermfg=91   guibg=NONE    guifg=#8700af | call s:FormatGroup('Function')
+    highlight Function         ctermbg=NONE ctermfg=204  guibg=NONE    guifg=#ff5f87 | call s:FormatGroup('Function')
     highlight SpecialKey       ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('SpecialKey')
     highlight Title            ctermbg=NONE ctermfg=33   guibg=NONE    guifg=#0087ff | call s:FormatGroup('Title')
 
@@ -409,7 +411,6 @@ let s:links = [
         \ ['Keyword', 'Statement'],
         \ ['Label', 'Statement'],
         \ ['Macro', 'PreProc'],
-        \ ['Operator', 'Statement'],
         \ ['PreCondit', 'PreProc'],
         \ ['Repeat', 'Statement'],
         \ ['SpecialChar', 'Special'],
