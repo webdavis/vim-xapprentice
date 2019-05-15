@@ -109,7 +109,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     " These require coc.nvim to be installed.
     if has('nvim')
-        highlight CocHighlightText      ctermbg=67   ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('CocHighlightText')
+        highlight CocHighlightText      ctermbg=NONE ctermfg=32   guibg=NONE    guifg=#0087d7 | call s:FormatGroup('CocHighlightText')
         highlight CocFloating           ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('CocFloating')
         highlight CocCodeLens           ctermbg=NONE ctermfg=242  guibg=NONE    guifg=#6c6c6c | call s:FormatGroup('CocCodeLens')
         highlight CocInfoSign           ctermbg=NONE ctermfg=68   guibg=NONE    guifg=#5f87d7 | call s:FormatGroup('CocInfoSign')
