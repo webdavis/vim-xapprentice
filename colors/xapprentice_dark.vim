@@ -140,7 +140,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Title            ctermbg=NONE ctermfg=231  guibg=NONE    guifg=#ffffdf | call s:FormatGroup('Title')
 
     highlight DiffAdd          ctermbg=108  ctermfg=235  guibg=#87af87 guifg=#262626 | call s:FormatGroup('DiffAdd')
-    highlight DiffChange       ctermbg=103  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('DiffChange')
+    highlight DiffChange       ctermbg=67   ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('DiffChange')
     highlight DiffDelete       ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call s:FormatGroup('DiffDelete')
     highlight DiffText         ctermbg=172  ctermfg=235  guibg=#d78700 guifg=#262626 | call s:FormatGroup('DiffText')
 
