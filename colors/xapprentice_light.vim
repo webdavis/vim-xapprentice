@@ -75,13 +75,14 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:lightyellow = '#ffe88f'
         let s:lightblue = '#c7e3ff'
         let s:lightgray = '#f9f9f9'
-        highlight String   guibg=#efffef guifg=#5f8700 | call s:FormatGroup('String')
-        highlight Operator guibg=#ebefff guifg=#005faf | call s:FormatGroup('String')
+        highlight String   guibg=#efffef guifg=#5f8787 | call s:FormatGroup('String')
+        highlight Operator guibg=#ebefff guifg=#005faf | call s:FormatGroup('Operator')
     else
         let s:lightyellow = '#ffdf5f'
         let s:lightblue = '#5fafff'
         let s:lightgray = '#eeeeee'
-        highlight String ctermbg=NONE ctermfg=64 guibg=NONE guifg=#5f8700 | call s:FormatGroup('String')
+        highlight String   ctermbg=NONE ctermfg=64   guibg=NONE guifg=#5f8700 | call s:FormatGroup('String')
+        highlight Operator ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE    | call s:FormatGroup('Operator')
     endif
 
     highlight Normal           ctermbg=15   ctermfg=237  guibg=#ffffff guifg=#3a3a3a | call s:FormatGroup('Normal')
@@ -90,7 +91,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     execute 'highlight Folded     ctermbg=255  ctermfg=242  guibg=' . s:lightgray . ' guifg=#6c6c6c' | call s:FormatGroup('Folded')
     highlight MatchParen       ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('MatchParen')
 
-    highlight Comment          ctermbg=NONE ctermfg=102  guibg=NONE    guifg=#878787 | call s:FormatGroup('Comment')
+    highlight Comment          ctermbg=NONE ctermfg=249  guibg=NONE    guifg=#b2b2b2 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=15   guibg=NONE    guifg=#ffffff | call s:FormatGroup('Conceal')
     highlight Constant         ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Constant')
     highlight Number           ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Constant')
