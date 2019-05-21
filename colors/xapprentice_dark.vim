@@ -72,6 +72,12 @@ endfunction
 if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     set background=dark
 
+    if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
+        let s:lightyellow = '#e5c879'
+    else
+        let s:lightyellow = '#ffdf87'
+    endif
+
     highlight Normal           ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc | call s:FormatGroup('Normal')
     highlight LineNr           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call s:FormatGroup('LineNr')
     highlight FoldColumn       ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call s:FormatGroup('FoldColumn')
@@ -98,12 +104,27 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight Pmenu            ctermbg=237  ctermfg=250  guibg=#3a3a3a guifg=#bcbcbc | call s:FormatGroup('Pmenu')
     highlight PmenuSbar        ctermbg=240  ctermfg=NONE guibg=#585858 guifg=NONE    | call s:FormatGroup('PmenuSbar')
-    highlight PmenuSel         ctermbg=73   ctermfg=235  guibg=#5fafaf guifg=#262626 | call s:FormatGroup('PmenuSel')
+    highlight PmenuSel         ctermbg=67   ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('PmenuSel')
     highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#5f8787 guifg=#5f8787 | call s:FormatGroup('PmenuThumb')
 
+    " These require coc.nvim to be installed.
     if has('nvim')
-        " This requires coc.nvim to be installed.
-        highlight CocFloating      ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('CocFloating')
+        highlight CocHighlightText      ctermbg=67   ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('CocHighlightText')
+        highlight CocFloating           ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('CocFloating')
+        highlight CocCodeLens           ctermbg=NONE ctermfg=242  guibg=NONE    guifg=#6c6c6c | call s:FormatGroup('CocCodeLens')
+
+        highlight CocHintSign           ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call s:FormatGroup('CocHintSign')
+        highlight CocHintHighlight      ctermbg=65   ctermfg=235  guibg=#5f875f guifg=#262626 | call s:FormatGroup('CocHintHighlight')
+
+        highlight CocInfoSign           ctermbg=NONE ctermfg=68   guibg=NONE    guifg=#5f87d7 | call s:FormatGroup('CocInfoSign')
+        highlight CocInfoHighlight      ctermbg=68   ctermfg=235  guibg=#5f87d7 guifg=#262626 | call s:FormatGroup('CocInfoHighlight')
+
+        execute 'highlight CocWarningSign ctermbg=NONE ctermfg=222 guibg=NONE guifg=' . s:lightyellow | call s:FormatGroup('CocWarningSign')
+        execute 'highlight CocWarningHighlight ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call s:FormatGroup('CocWarningHighlight')
+
+        highlight CocErrorSign          ctermbg=NONE ctermfg=95   guibg=NONE    guifg=#875f5f | call s:FormatGroup('CocErrorSign')
+        highlight CocErrorHighlight     ctermbg=95   ctermfg=235  guibg=#875f5f guifg=#262626 | call s:FormatGroup('CocErrorHighlight')
+        " coc-highlight.
         highlight HighlightedyankRegion ctermbg=108 ctermfg=235 guibg=#87af87 guifg=#262626 | call s:FormatGroup('HighlightedyankRegion')
     endif
 
@@ -111,7 +132,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight ModeMsg          ctermbg=108  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('ModeMsg')
     highlight MoreMsg          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('MoreMsg')
     highlight Question         ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Question')
-    highlight WarningMsg       ctermbg=NONE ctermfg=173  guibg=NONE    guifg=#d7875f | call s:FormatGroup('WarningMsg')
+    execute 'highlight WarningMsg ctermbg=NONE ctermfg=222 guibg=NONE guifg=' . s:lightyellow | call s:FormatGroup('WarningMsg')
 
     highlight TabLine          ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('TabLine')
     highlight TabLineFill      ctermbg=238  ctermfg=238  guibg=#444444 guifg=#444444 | call s:FormatGroup('TabLineFill')
@@ -184,25 +205,25 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         highlight ALEErrorSign      ctermbg=234  ctermfg=131  guibg=#1c1c1c guifg=#af5f5f  | call s:FormatGroup('ALEErrorSign')
         highlight ALEErrorLine      ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEErrorLine')
 
-        highlight ALEWarning        ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEWarning')
-        highlight ALEWarningSign    ctermbg=234  ctermfg=173  guibg=#1c1c1c guifg=#d7875f  | call s:FormatGroup('ALEWarningSign')
+        execute 'highlight ALEWarning ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call s:FormatGroup('ALEWarning')
+        execute 'highlight ALEWarningSign ctermbg=234 ctermfg=222 guibg=#1c1c1c guifg=' s:lightyellow | call s:FormatGroup('ALEWarningSign')
         highlight ALEWarningLine    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEWarningLine')
 
-        highlight ALEInfo           ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEInfo')
-        highlight ALEInfoSign       ctermbg=234  ctermfg=173  guibg=#1c1c1c guifg=#d7875f  | call s:FormatGroup('ALEInfoSign')
+        highlight ALEInfo           ctermbg=68   ctermfg=235  guibg=#5f87d7 guifg=#262626  | call s:FormatGroup('ALEInfo')
+        highlight ALEInfoSign       ctermbg=234  ctermfg=68   guibg=#1c1c1c guifg=#5f87d7  | call s:FormatGroup('ALEInfoSign')
         highlight ALEInfoLine       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call s:FormatGroup('ALEInfoLine')
     else
         highlight ALEError          ctermbg=131  ctermfg=131  guibg=#af5f5f guifg=#262626  | call s:FormatGroup('ALEError')
         highlight ALEErrorSign      ctermbg=235  ctermfg=131  guibg=#1c1c1c guifg=#af5f5f  | call s:FormatGroup('ALEErrorSign')
         highlight ALEErrorLine      ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626  | call s:FormatGroup('ALEErrorLine')
 
-        highlight ALEWarning        ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEWarning')
-        highlight ALEWarningSign    ctermbg=235  ctermfg=173  guibg=#1c1c1c guifg=#d7875f  | call s:FormatGroup('ALEWarningSign')
-        highlight ALEWarningLine    ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEWarningLine')
+        execute 'highlight ALEWarning ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call s:FormatGroup('ALEWarning')
+        execute 'highlight ALEWarningSign ctermbg=235 ctermfg=222 guibg=#1c1c1c guifg=' . s:lightyellow | call s:FormatGroup('ALEWarningSign')
+        execute 'highlight ALEWarningLine ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call s:FormatGroup('ALEWarningLine')
 
-        highlight ALEInfo           ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEInfo')
-        highlight ALEInfoSign       ctermbg=235  ctermfg=173  guibg=#1c1c1c guifg=#d7875f  | call s:FormatGroup('ALEInfoSign')
-        highlight ALEInfoLine       ctermbg=173  ctermfg=235  guibg=#d7875f guifg=#262626  | call s:FormatGroup('ALEInfoLine')
+        highlight ALEInfo           ctermbg=68   ctermfg=235  guibg=#5f87d7 guifg=#262626  | call s:FormatGroup('ALEInfo')
+        highlight ALEInfoSign       ctermbg=235  ctermfg=68   guibg=#1c1c1c guifg=#5f87d7  | call s:FormatGroup('ALEInfoSign')
+        highlight ALEInfoLine       ctermbg=68   ctermfg=235  guibg=#5f87d7 guifg=#262626  | call s:FormatGroup('ALEInfoLine')
     endif
 
     if get(g:, 'xapprentice_signify', 1)
@@ -432,7 +453,7 @@ let s:links = [
         \ ['diffIsA', 'WarningMsg'],
         \ ['diffNoEOL', 'WarningMsg'],
         \ ['diffOnly', 'WarningMsg'],
-        \ ['diffRemoved', 'WarningMsg'],
+        \ ['diffRemoved', 'ErrorMsg'],
         \ ['diffAdded', 'String'],
         \ ]
 
