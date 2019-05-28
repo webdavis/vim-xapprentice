@@ -84,7 +84,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Folded           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call s:FormatGroup('Folded')
     highlight MatchParen       ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87 | call s:FormatGroup('MatchParen')
 
-    highlight Comment          ctermbg=NONE ctermfg=239  guibg=NONE    guifg=#4e4e4e | call s:FormatGroup('Comment')
+    highlight Comment          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Conceal')
     highlight Constant         ctermbg=NONE ctermfg=137  guibg=NONE    guifg=#af875f | call s:FormatGroup('Constant')
     highlight Error            ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f | call s:FormatGroup('Error')
