@@ -107,8 +107,8 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight PmenuSel         ctermbg=67   ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('PmenuSel')
     highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#5f8787 guifg=#5f8787 | call s:FormatGroup('PmenuThumb')
 
-    " These require coc.nvim to be installed.
-    if has('nvim')
+    " Requires neoclide/coc.nvim to be installed.
+    if exists('g:did_coc_loaded')
         highlight CocHighlightText      ctermbg=NONE ctermfg=32   guibg=NONE    guifg=#0087d7 | call s:FormatGroup('CocHighlightText')
         highlight CocFloating           ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('CocFloating')
         highlight CocCodeLens           ctermbg=NONE ctermfg=242  guibg=NONE    guifg=#6c6c6c | call s:FormatGroup('CocCodeLens')
@@ -120,9 +120,14 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         execute 'highlight CocWarningHighlight ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call s:FormatGroup('CocWarningHighlight')
         highlight CocErrorSign          ctermbg=NONE ctermfg=95   guibg=NONE    guifg=#875f5f | call s:FormatGroup('CocErrorSign')
         highlight CocErrorHighlight     ctermbg=95   ctermfg=234  guibg=#875f5f guifg=#1c1c1c | call s:FormatGroup('CocErrorHighlight')
-        " coc-highlight.
+
+        " Provided by the extension coc-highlight.
         highlight HighlightedyankRegion ctermbg=108 ctermfg=235 guibg=#87af87 guifg=#262626 | call s:FormatGroup('HighlightedyankRegion')
     endif
+
+    " Requires unblevable/quick-scope to be installed.
+    highlight QuickScopePrimary   guifg=#ffffff gui=bold ctermfg=15  cterm=bold
+    highlight QuickScopeSecondary guifg=#af5f5f gui=bold ctermfg=131 cterm=bold
 
     highlight ErrorMsg         ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('ErrorMsg')
     highlight ModeMsg          ctermbg=108  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('ModeMsg')

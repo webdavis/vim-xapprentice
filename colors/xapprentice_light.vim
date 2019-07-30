@@ -114,10 +114,14 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight PmenuSel         ctermbg=67   ctermfg=15   guibg=#5f87af guifg=#ffffff | call s:FormatGroup('PmenuSel')
     highlight PmenuThumb       ctermbg=242  ctermfg=NONE guibg=#6c6c6c guifg=NONE    | call s:FormatGroup('PmenuThumb')
 
-    if has('nvim')
-        " This requires coc.nvim to be installed.
+    " Requires neoclide/coc.nvim to be installed.
+    if exists('g:did_coc_loaded')
         highlight CocFloating  ctermbg=252  ctermfg=237  guibg=#d0d0d0 guifg=#3a3a3a | call s:FormatGroup('CocFloating')
     endif
+
+    " Requires unblevable/quick-scope to be installed.
+    highlight QuickScopePrimary   guifg=#000000 gui=bold ctermfg=0   cterm=bold
+    highlight QuickScopeSecondary guifg=#af5f5f gui=bold ctermfg=131 cterm=bold
 
     highlight ErrorMsg         ctermbg=NONE ctermfg=197  guibg=NONE    guifg=#ff005f | call s:FormatGroup('ErrorMsg')
     highlight ModeMsg          ctermbg=67   ctermfg=15   guibg=#5f87af guifg=#ffffff | call s:FormatGroup('ModeMsg')
