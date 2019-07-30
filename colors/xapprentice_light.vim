@@ -149,7 +149,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight VertSplit        ctermbg=247  ctermfg=247  guibg=#9e9e9e guifg=#9e9e9e | call s:FormatGroup('VertSplit')
     execute 'highlight WildMenu ctermbg=75 ctermfg=236 guibg=' . s:lightblue . ' guifg=#303030' | call s:FormatGroup('WildMenu')
 
-    highlight Function         ctermbg=NONE ctermfg=204  guibg=NONE    guifg=#ff5f87 | call s:FormatGroup('Function')
+    highlight Function         ctermbg=NONE ctermfg=88   guibg=NONE    guifg=#870000 | call s:FormatGroup('Function')
     highlight SpecialKey       ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('SpecialKey')
     highlight Title            ctermbg=NONE ctermfg=33   guibg=NONE    guifg=#0087ff | call s:FormatGroup('Title')
 
