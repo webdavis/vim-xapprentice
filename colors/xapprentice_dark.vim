@@ -84,7 +84,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Folded           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call s:FormatGroup('Folded')
     highlight MatchParen       ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87 | call s:FormatGroup('MatchParen')
 
-    highlight Comment          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('Comment')
+    highlight Comment          ctermbg=NONE ctermfg=241  guibg=NONE    guifg=#626262 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Conceal')
     highlight Constant         ctermbg=NONE ctermfg=137  guibg=NONE    guifg=#af875f | call s:FormatGroup('Constant')
     highlight Error            ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f | call s:FormatGroup('Error')
@@ -100,10 +100,10 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Type             ctermbg=NONE ctermfg=103  guibg=NONE    guifg=#8787af | call s:FormatGroup('Type')
     highlight Underlined       ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Underlined', 'underline')
 
-    highlight NonText          ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#4e4e4e | call s:FormatGroup('NonText')
+    highlight NonText          ctermbg=NONE ctermfg=239  guibg=NONE    guifg=#4e4e4e | call s:FormatGroup('NonText')
 
     highlight Pmenu            ctermbg=237  ctermfg=250  guibg=#3a3a3a guifg=#bcbcbc | call s:FormatGroup('Pmenu')
-    highlight PmenuSbar        ctermbg=240  ctermfg=NONE guibg=#585858 guifg=NONE    | call s:FormatGroup('PmenuSbar')
+    highlight PmenuSbar        ctermbg=241  ctermfg=NONE guibg=#626262 guifg=NONE    | call s:FormatGroup('PmenuSbar')
     highlight PmenuSel         ctermbg=67   ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('PmenuSel')
     highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#5f8787 guifg=#5f8787 | call s:FormatGroup('PmenuThumb')
 
@@ -147,7 +147,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight helpLeadBlank    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpLeadBlank')
     highlight helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpNormal')
 
-    highlight StatusLine       ctermbg=240  ctermfg=252  guibg=#585858 guifg=#d0d0d0 | call s:FormatGroup('StatusLine')
+    highlight StatusLine       ctermbg=241  ctermfg=252  guibg=#626262 guifg=#d0d0d0 | call s:FormatGroup('StatusLine')
     highlight StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineNC')
 
     highlight StatusLineTerm   ctermbg=101  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call s:FormatGroup('StatusLineTerm')
@@ -160,7 +160,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight WildMenu         ctermbg=131  ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('WildMenu')
 
     highlight Function         ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call s:FormatGroup('Function')
-    highlight SpecialKey       ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('SpecialKey')
+    highlight SpecialKey       ctermbg=NONE ctermfg=241  guibg=NONE    guifg=#626262 | call s:FormatGroup('SpecialKey')
     highlight Title            ctermbg=NONE ctermfg=231  guibg=NONE    guifg=#ffffdf | call s:FormatGroup('Title')
 
     highlight DiffAdd          ctermbg=108  ctermfg=235  guibg=#87af87 guifg=#262626 | call s:FormatGroup('DiffAdd')
