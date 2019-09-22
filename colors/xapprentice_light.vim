@@ -183,9 +183,6 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     " Markdown code.
     highlight mkdHeading       ctermbg=NONE ctermfg=33   guibg=NONE    guifg=#0087ff | call s:FormatGroup('mkdHeading', 'bold')
     highlight htmlH1           ctermbg=NONE ctermfg=33   guibg=NONE    guifg=#0087ff | call s:FormatGroup('htmlH1', 'bold')
-    highlight mkdURL           ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('mkdURL')
-    highlight mkdInlineURL     ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('mkdInlineURL')
-    highlight mkdID            ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('mkdID')
 
     if has('gui_running')
         highlight SpellBad          ctermbg=230  ctermfg=236  guibg=NONE    guifg=#303030 guisp=#af87af | call s:FormatGroup('SpellBad', 'undercurl')
@@ -337,9 +334,6 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     " Markdown code.
     highlight mkdHeading       ctermbg=NONE        ctermfg=blue        | call s:FormatGroup('mkdHeading', 'bold')
     highlight htmlH1           ctermbg=NONE        ctermfg=blue        | call s:FormatGroup('htmlH1', 'bold')
-    highlight mkdURL           ctermbg=NONE        ctermfg=red         | call s:FormatGroup('mkdURL')
-    highlight mkdInlineURL     ctermbg=NONE        ctermfg=red         | call s:FormatGroup('mkdInlineURL')
-    highlight mkdID            ctermbg=NONE        ctermfg=red         | call s:FormatGroup('mkdID')
 
     if get(g:, 'xapprentice_ale', 1) ==? 1
         highlight ALEError          ctermbg=lightred    ctermfg=black     | call s:FormatGroup('ALEError')
@@ -435,9 +429,12 @@ let s:links = [
         \ ['markdownCode', 'SpecialKey'],
         \ ['markdownCodeBlock', 'markdownCode'],
         \ ['markdownItalic', 'Error'],
-        \ ['markdownUrl', 'PreProc'],
+        \ ['markdownUrl', 'Statement'],
         \ ['markdownListMarker', 'Constant'],
         \ ['mkdURL', 'markdownUrl'],
+        \ ['mkdID', 'mkdURL'],
+        \ ['mkdDelimiter', 'mkdURL'],
+        \ ['mkdInlineURL', 'mkdURL'],
         \ ['mkdHeading', 'htmlH1'],
         \ ['mkdListItem', 'Identifier'],
         \ ['xmlTag', 'Statement'],
