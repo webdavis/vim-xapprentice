@@ -117,7 +117,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     " Requires neoclide/coc.nvim to be installed.
     if exists('g:did_coc_loaded')
         highlight CocFloating      ctermbg=252  ctermfg=237  guibg=#d0d0d0 guifg=#3a3a3a | call s:FormatGroup('CocFloating')
-        highlight CocHighlightText ctermbg=152  ctermfg=237  guibg=#afd7d7 guifg=#3a3a3a | call s:FormatGroup('CocHighlightText')
+        highlight HighlightedyankRegion ctermbg=152  ctermfg=237  guibg=#afd7d7 guifg=#3a3a3a | call s:FormatGroup('HighlightedyankRegion')
     endif
 
     " Requires unblevable/quick-scope to be installed.
