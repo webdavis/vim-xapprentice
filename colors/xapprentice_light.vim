@@ -181,8 +181,8 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight DebugBreakpoint  ctermbg=33   ctermfg=236  guibg=#0087ff guifg=#303030 | call s:FormatGroup('DebugBreakpoint')
 
     " Markdown code.
-    highlight mkdHeading       ctermbg=NONE ctermfg=33   guibg=NONE    guifg=#0087ff | call s:FormatGroup('mkdHeading', 'bold')
-    highlight htmlH1           ctermbg=NONE ctermfg=33   guibg=NONE    guifg=#0087ff | call s:FormatGroup('htmlH1', 'bold')
+    highlight mkdHeading       ctermbg=NONE ctermfg=26   guibg=NONE    guifg=#005fd7 | call s:FormatGroup('mkdHeading', 'bold')
+    highlight htmlH1           ctermbg=NONE ctermfg=26   guibg=NONE    guifg=#005fd7 | call s:FormatGroup('htmlH1', 'bold')
 
     if has('gui_running')
         highlight SpellBad          ctermbg=230  ctermfg=236  guibg=NONE    guifg=#303030 guisp=#af87af | call s:FormatGroup('SpellBad', 'undercurl')
