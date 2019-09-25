@@ -181,7 +181,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight IncSearch        ctermbg=211  ctermfg=236  guibg=#ff87af guifg=#303030 | call s:FormatGroup('IncSearch')
     execute 'highlight Search ctermbg=253 ctermfg=236  guibg=' . s:darkyellow . ' guifg=#303030' | call s:FormatGroup('Search')
 
-    highlight Directory        ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005f87 | call s:FormatGroup('Directory')
+    highlight Directory        ctermbg=NONE ctermfg=33   guibg=NONE    guifg=#0087ff | call s:FormatGroup('Directory')
 
     execute 'highlight SignColumn ctermbg=255 ctermfg=242 guibg=' . s:lightgray . ' guifg=#6c6c6c' | call s:FormatGroup('SignColumn')
     execute 'highlight ColorColumn ctermbg=NONE ctermfg=75 guibg=NONE guifg=' . s:lightblue | call s:FormatGroup('ColorColumn')
