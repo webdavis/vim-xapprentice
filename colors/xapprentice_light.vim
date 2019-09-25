@@ -145,9 +145,9 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Question         ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Question')
     highlight WarningMsg       ctermbg=NONE ctermfg=215  guibg=NONE    guifg=#ffaf5f | call s:FormatGroup('WarningMsg')
 
-    highlight TabLine          ctermbg=250  ctermfg=240  guibg=#bcbcbc guifg=#585858 | call s:FormatGroup('TabLine')
-    highlight TabLineFill      ctermbg=252  ctermfg=236  guibg=#d0d0d0 guifg=#303030 | call s:FormatGroup('TabLineFill')
-    highlight TabLineSel       ctermbg=24   ctermfg=255  guibg=#005f87 guifg=#eeeeee | call s:FormatGroup('TabLineSel')
+    highlight TabLine          ctermbg=248  ctermfg=240  guibg=#a8a8a8 guifg=#585858 | call s:FormatGroup('TabLine')
+    highlight TabLineFill      ctermbg=249  ctermfg=236  guibg=#b2b2b2 guifg=#303030 | call s:FormatGroup('TabLineFill')
+    highlight TabLineSel       ctermbg=252  ctermfg=255  guibg=#d0d0d0 guifg=#eeeeee | call s:FormatGroup('TabLineSel')
 
     highlight Cursor           ctermbg=67   ctermfg=NONE guibg=#5f87af guifg=NONE    | call s:FormatGroup('Cursor')
     highlight CursorColumn     ctermbg=255  ctermfg=NONE guibg=#eeeeee guifg=NONE    | call s:FormatGroup('CursorColumn')
