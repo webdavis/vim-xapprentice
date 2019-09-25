@@ -135,9 +135,9 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Question         ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Question')
     execute 'highlight WarningMsg ctermbg=NONE ctermfg=222 guibg=NONE guifg=' . s:lightyellow | call s:FormatGroup('WarningMsg')
 
-    highlight TabLine          ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('TabLine')
-    highlight TabLineFill      ctermbg=238  ctermfg=238  guibg=#444444 guifg=#444444 | call s:FormatGroup('TabLineFill')
-    highlight TabLineSel       ctermbg=101  ctermfg=235  guibg=#878787 guifg=#262626 | call s:FormatGroup('TabLineSel')
+    highlight TabLine          ctermbg=238  ctermfg=102  guibg=#444444 guifg=#878787 | call s:FormatGroup('TabLine')
+    highlight TabLineFill      ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('TabLineFill')
+    highlight TabLineSel       ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('TabLineSel')
 
     highlight Cursor           ctermbg=242  ctermfg=NONE guibg=#6c6c6c guifg=NONE    | call s:FormatGroup('Cursor')
     highlight CursorColumn     ctermbg=236  ctermfg=NONE guibg=#303030 guifg=NONE    | call s:FormatGroup('CursorColumn')
@@ -147,13 +147,13 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight helpLeadBlank    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpLeadBlank')
     highlight helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('helpNormal')
 
-    highlight StatusLine       ctermbg=241  ctermfg=252  guibg=#626262 guifg=#d0d0d0 | call s:FormatGroup('StatusLine')
+    highlight StatusLine       ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('StatusLine')
     highlight StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineNC')
 
     highlight StatusLineTerm   ctermbg=101  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call s:FormatGroup('StatusLineTerm')
     highlight StatusLineTermNC ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call s:FormatGroup('StatusLineTermNC')
 
-    highlight Visual           ctermbg=110  ctermfg=235  guibg=#8fafd7 guifg=#262626 | call s:FormatGroup('Visual')
+    highlight Visual           ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call s:FormatGroup('Visual')
     highlight VisualNOS        ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('VisualNOS')
 
     highlight VertSplit        ctermbg=238  ctermfg=238  guibg=#444444 guifg=#444444 | call s:FormatGroup('VertSplit')
