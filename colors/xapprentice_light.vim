@@ -75,14 +75,15 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:darkyellow = '#e5c23c'
         let s:lightyellow = '#ffe37b'
         let s:lightblue = '#c7e3ff'
-        let s:lightgray = '#f9f9f9'
+        " Leaving this because I go back and forth on changing it.
+        let s:lightgray = '#e4e4e4'
         highlight String   guibg=#efffef guifg=#5f8787 | call s:FormatGroup('String')
         highlight Operator guibg=#ebefff guifg=#005faf | call s:FormatGroup('Operator')
     else
         let s:darkyellow = '#dfaf00'
         let s:lightyellow = '#ffdf5f'
         let s:lightblue = '#5fafff'
-        let s:lightgray = '#eeeeee'
+        let s:lightgray = '#e4e4e4'
         highlight String   ctermbg=NONE ctermfg=64   guibg=NONE guifg=#5f8700 | call s:FormatGroup('String')
         highlight Operator ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE    | call s:FormatGroup('Operator')
     endif
