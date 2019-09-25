@@ -104,7 +104,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight Pmenu            ctermbg=237  ctermfg=250  guibg=#3a3a3a guifg=#bcbcbc | call s:FormatGroup('Pmenu')
     highlight PmenuSbar        ctermbg=241  ctermfg=NONE guibg=#626262 guifg=NONE    | call s:FormatGroup('PmenuSbar')
-    highlight PmenuSel         ctermbg=67   ctermfg=235  guibg=#5f87af guifg=#262626 | call s:FormatGroup('PmenuSel')
+    highlight PmenuSel         ctermbg=103  ctermfg=235  guibg=#8787af guifg=#262626 | call s:FormatGroup('PmenuSel')
     highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#5f8787 guifg=#5f8787 | call s:FormatGroup('PmenuThumb')
 
     " Requires neoclide/coc.nvim to be installed.
