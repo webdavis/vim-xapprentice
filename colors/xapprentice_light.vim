@@ -72,12 +72,14 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     set background=dark
 
     if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
-        let s:lightyellow = '#ffe88f'
+        let s:darkyellow = '#e5c23c'
+        let s:lightyellow = '#ffe37b'
         let s:lightblue = '#c7e3ff'
         let s:lightgray = '#f9f9f9'
         highlight String   guibg=#efffef guifg=#5f8787 | call s:FormatGroup('String')
         highlight Operator guibg=#ebefff guifg=#005faf | call s:FormatGroup('Operator')
     else
+        let s:darkyellow = '#dfaf00'
         let s:lightyellow = '#ffdf5f'
         let s:lightblue = '#5fafff'
         let s:lightgray = '#eeeeee'
@@ -103,7 +105,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Special          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Special')
     highlight Delimiter        ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Delimiter')
     highlight Statement        ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005f87 | call s:FormatGroup('Statement')
-    highlight Todo             ctermbg=115  ctermfg=237  guibg=#87d7af guifg=#3a3a3a | call s:FormatGroup('Todo')
+    highlight Todo             ctermbg=NONE ctermfg=237  guibg=NONE    guifg=#3a3a3a | call s:FormatGroup('Todo')
     highlight Type             ctermbg=NONE ctermfg=96   guibg=NONE    guifg=#875f87 | call s:FormatGroup('Type')
     highlight Underlined       ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('Underlined', 'underline')
 
@@ -116,7 +118,19 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     " Requires neoclide/coc.nvim to be installed.
     if exists('g:did_coc_loaded')
-        highlight CocFloating      ctermbg=252  ctermfg=237  guibg=#d0d0d0 guifg=#3a3a3a | call s:FormatGroup('CocFloating')
+        highlight CocHighlightText      ctermbg=189  ctermfg=NONE guibg=#dfdfff guifg=NONE    | call s:FormatGroup('CocHighlightText')
+        highlight CocFloating           ctermbg=252  ctermfg=237  guibg=#d0d0d0 guifg=#3a3a3a | call s:FormatGroup('CocFloating')
+        highlight CocCodeLens           ctermbg=NONE ctermfg=242  guibg=NONE    guifg=#6c6c6c | call s:FormatGroup('CocCodeLens')
+        highlight CocInfoSign           ctermbg=NONE ctermfg=32   guibg=NONE    guifg=#0087d7 | call s:FormatGroup('CocInfoSign', 'bold')
+        highlight CocInfoHighlight      ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('CocInfoHighlight')
+        highlight CocHintSign           ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call s:FormatGroup('CocHintSign')
+        highlight CocHintHighlight      ctermbg=65   ctermfg=235  guibg=#5f875f guifg=#262626 | call s:FormatGroup('CocHintHighlight')
+        highlight CocWarningSign        ctermbg=221  ctermfg=237  guibg=#ffdf5f guifg=#3a3a3a | call s:FormatGroup('CocWarningSign')
+        highlight CocWarningHighlight   ctermbg=221  ctermfg=237  guibg=#ffdf5f guifg=#3a3a3a | call s:FormatGroup('CocWarningHighlight')
+        highlight CocErrorSign          ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call s:FormatGroup('CocErrorSign')
+        highlight CocErrorHighlight     ctermbg=181  ctermfg=234  guibg=#dfafaf guifg=#1c1c1c | call s:FormatGroup('CocErrorHighlight')
+
+        " Provided by the extension coc-highlight.
         highlight HighlightedyankRegion ctermbg=152  ctermfg=237  guibg=#afd7d7 guifg=#3a3a3a | call s:FormatGroup('HighlightedyankRegion')
     endif
 
@@ -164,7 +178,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight DiffText         ctermbg=215  ctermfg=236  guibg=#ffaf5f guifg=#303030 | call s:FormatGroup('DiffText')
 
     highlight IncSearch        ctermbg=211  ctermfg=236  guibg=#ff87af guifg=#303030 | call s:FormatGroup('IncSearch')
-    execute 'highlight Search ctermbg=253 ctermfg=236  guibg=' . s:lightyellow . ' guifg=#303030' | call s:FormatGroup('Search')
+    execute 'highlight Search ctermbg=253 ctermfg=236  guibg=' . s:darkyellow . ' guifg=#303030' | call s:FormatGroup('Search')
 
     highlight Directory        ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005f87 | call s:FormatGroup('Directory')
 
