@@ -135,8 +135,8 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     endif
 
     " Requires unblevable/quick-scope to be installed.
-    highlight QuickScopePrimary   guifg=#000000 gui=bold ctermfg=0   cterm=bold
-    highlight QuickScopeSecondary guifg=#af5f5f gui=bold ctermfg=131 cterm=bold
+    highlight QuickScopePrimary   guifg=#000000 ctermfg=0   | call s:FormatGroup('QuickScopePrimary', 'bold')
+    highlight QuickScopeSecondary guifg=#af5f5f ctermfg=131 | call s:FormatGroup('QuickScopeSecondary', 'bold')
 
     highlight ErrorMsg         ctermbg=NONE ctermfg=197  guibg=NONE    guifg=#ff005f | call s:FormatGroup('ErrorMsg')
     highlight ModeMsg          ctermbg=67   ctermfg=15   guibg=#5f87af guifg=#ffffff | call s:FormatGroup('ModeMsg')
