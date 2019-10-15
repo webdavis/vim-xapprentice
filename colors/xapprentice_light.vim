@@ -467,6 +467,7 @@ let s:links = [
         \ ['diffRemoved', 'WarningMsg'],
         \ ['diffAdded', 'String'],
         \ ['vimIsCommand', 'Statement'],
+        \ ['vimFunction', 'Function'],
         \ ]
 
 augroup Apprentice
