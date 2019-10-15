@@ -129,6 +129,12 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         highlight HighlightedyankRegion ctermbg=108 ctermfg=235 guibg=#87af87 guifg=#262626 | call s:FormatGroup('HighlightedyankRegion')
     endif
 
+    " Requires ntpeters/vim-better-whitespace to be installed.
+    if exists("g:loaded_better_whitespace_plugin")
+        let g:better_whitespace_ctermcolor = '95'
+        let g:better_whitespace_guicolor = '#875f5f'
+    endif
+
     " Requires unblevable/quick-scope to be installed.
     highlight QuickScopePrimary   guifg=#ffffff ctermfg=15  | call s:FormatGroup('QuickScopePrimary', 'bold')
     highlight QuickScopeSecondary guifg=#ff875f ctermfg=209 | call s:FormatGroup('QuickScopeSecondary', 'bold')
