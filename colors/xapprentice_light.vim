@@ -88,13 +88,13 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         highlight Operator ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE    | call s:FormatGroup('Operator')
     endif
 
-    highlight Normal           ctermbg=15   ctermfg=237  guibg=#ffffff guifg=#3a3a3a | call s:FormatGroup('Normal')
+    highlight Normal           ctermbg=15   ctermfg=236  guibg=#ffffff guifg=#303030 | call s:FormatGroup('Normal')
     execute 'highlight LineNr     ctermbg=255  ctermfg=245  guibg=' . s:lightgray . ' guifg=#8a8a8a' | call s:FormatGroup('LineNr')
     execute 'highlight FoldColumn ctermbg=255  ctermfg=242  guibg=' . s:lightgray . ' guifg=#6c6c6c' | call s:FormatGroup('FoldColumn')
     execute 'highlight Folded     ctermbg=255  ctermfg=242  guibg=' . s:lightgray . ' guifg=#6c6c6c' | call s:FormatGroup('Folded')
     highlight MatchParen       ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call s:FormatGroup('MatchParen')
 
-    highlight Comment          ctermbg=NONE ctermfg=246  guibg=NONE    guifg=#949494 | call s:FormatGroup('Comment')
+    highlight Comment          ctermbg=NONE ctermfg=243  guibg=NONE    guifg=#767676 | call s:FormatGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=15   guibg=NONE    guifg=#ffffff | call s:FormatGroup('Conceal')
     highlight Constant         ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Constant')
     highlight Number           ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call s:FormatGroup('Constant')
@@ -467,7 +467,7 @@ let s:links = [
         \ ['diffRemoved', 'WarningMsg'],
         \ ['diffAdded', 'String'],
         \ ['vimIsCommand', 'Statement'],
-        \ ['vimFunction', 'Function'],
+        \ ['vimFunction', 'FunctionStatement'],
         \ ]
 
 augroup Apprentice
