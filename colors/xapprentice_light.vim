@@ -439,7 +439,7 @@ let s:links = [
         \ ['htmlSpecialTagName', 'htmlTagName'],
         \ ['htmlTag', 'htmlTagName'],
         \ ['htmlBold', 'Normal'],
-        \ ['htmlItalic', 'Normal'],
+        \ ['htmlItalic', 'Error'],
         \ ['markdownHeadingDelimiter', 'htmlH1'],
         \ ['markdownCode', 'SpecialKey'],
         \ ['markdownCodeBlock', 'markdownCode'],
