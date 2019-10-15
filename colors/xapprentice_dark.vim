@@ -74,8 +74,10 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
         let s:lightyellow = '#e5c879'
+        let s:darkgray = '#343434'
     else
         let s:lightyellow = '#ffdf87'
+        let s:darkgray = '#3a3a3a'
     endif
 
     highlight Normal           ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc | call s:FormatGroup('Normal')
@@ -102,7 +104,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     highlight NonText          ctermbg=NONE ctermfg=239  guibg=NONE    guifg=#4e4e4e | call s:FormatGroup('NonText')
 
-    highlight Pmenu            ctermbg=237  ctermfg=250  guibg=#3a3a3a guifg=#bcbcbc | call s:FormatGroup('Pmenu')
+    execute 'highlight Pmenu ctermbg=237  ctermfg=250  guibg='.s:darkgray.' guifg=#bcbcbc' | call s:FormatGroup('Pmenu')
     highlight PmenuSbar        ctermbg=241  ctermfg=NONE guibg=#626262 guifg=NONE    | call s:FormatGroup('PmenuSbar')
     highlight PmenuSel         ctermbg=103  ctermfg=235  guibg=#8787af guifg=#262626 | call s:FormatGroup('PmenuSel')
     highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#5f8787 guifg=#5f8787 | call s:FormatGroup('PmenuThumb')
