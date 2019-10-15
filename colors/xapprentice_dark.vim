@@ -117,7 +117,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         highlight CocHintSign           ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call s:FormatGroup('CocHintSign')
         highlight CocHintHighlight      ctermbg=65   ctermfg=0    guibg=#5f875f guifg=#000000 | call s:FormatGroup('CocHintHighlight')
         execute 'highlight CocWarningSign ctermbg=NONE ctermfg=222 guibg=NONE guifg=' . s:lightyellow | call s:FormatGroup('CocWarningSign')
-        execute 'highlight CocWarningHighlight ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call s:FormatGroup('CocWarningHighlight')
+        execute 'highlight CocWarningHighlight ctermbg=222 ctermfg=0 guibg=' . s:lightyellow . ' guifg=#000000' | call s:FormatGroup('CocWarningHighlight')
         highlight CocErrorSign          ctermbg=NONE ctermfg=95   guibg=NONE    guifg=#875f5f | call s:FormatGroup('CocErrorSign')
         highlight CocErrorHighlight     ctermbg=95   ctermfg=234  guibg=#875f5f guifg=#1c1c1c | call s:FormatGroup('CocErrorHighlight')
 
