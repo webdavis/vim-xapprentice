@@ -119,7 +119,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         execute 'highlight CocWarningSign ctermbg=NONE ctermfg=222 guibg=NONE guifg=' . s:lightyellow | call s:FormatGroup('CocWarningSign')
         execute 'highlight CocWarningHighlight ctermbg=222 ctermfg=0 guibg=' . s:lightyellow . ' guifg=#000000' | call s:FormatGroup('CocWarningHighlight')
         highlight CocErrorSign          ctermbg=NONE ctermfg=95   guibg=NONE    guifg=#875f5f | call s:FormatGroup('CocErrorSign')
-        highlight CocErrorHighlight     ctermbg=95   ctermfg=234  guibg=#875f5f guifg=#1c1c1c | call s:FormatGroup('CocErrorHighlight')
+        highlight CocErrorHighlight     ctermbg=95   ctermfg=232  guibg=#875f5f guifg=#080808 | call s:FormatGroup('CocErrorHighlight')
 
         " Provided by the extension coc-highlight.
         highlight HighlightedyankRegion ctermbg=108 ctermfg=235 guibg=#87af87 guifg=#262626 | call s:FormatGroup('HighlightedyankRegion')
