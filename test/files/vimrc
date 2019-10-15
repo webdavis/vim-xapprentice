@@ -88,11 +88,8 @@ let $COLORTERM = 'truecolor'
 if has('termguicolors') | set termguicolors | endif
 
 syntax enable
-let g:xapprentice_bold_group = [
-    \ 'EndOfBuffer', 'NonText', 'Title', 'MoreMsg', 'ModeMsg', 'CursorLineNr',
-    \ 'Directory', 'Todo',
-    \ ]
-let g:xapprentice_standout_group = ['ColorColumn', 'Cursor']
+let g:xapprentice_bold_group = ['EndOfBuffer', 'NonText', 'Title', 'MoreMsg', 'ModeMsg', 'CursorLineNr', 'Directory', 'Todo',]
+let g:xapprentice_standout_group = ['ColorColumn', 'Cursor',]
 let g:xapprentice_italic_group = ['Comment',]
 let g:xapprentice_underline_group = ['Function',]
 
