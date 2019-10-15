@@ -167,7 +167,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight VisualNOS        ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('VisualNOS')
 
     highlight VertSplit        ctermbg=247  ctermfg=247  guibg=#9e9e9e guifg=#9e9e9e | call s:FormatGroup('VertSplit')
-    execute 'highlight WildMenu ctermbg=75 ctermfg=236 guibg=' . s:lightblue . ' guifg=#303030' | call s:FormatGroup('WildMenu')
+    highlight WildMenu         ctermbg=115  ctermfg=235  guibg=#87d7af guifg=#262626 | call s:FormatGroup('WildMenu')
 
     highlight Function         ctermbg=NONE ctermfg=88   guibg=NONE    guifg=#870000 | call s:FormatGroup('Function')
     highlight SpecialKey       ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 | call s:FormatGroup('SpecialKey')
