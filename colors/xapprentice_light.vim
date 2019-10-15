@@ -77,14 +77,12 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:lightblue = '#c7e3ff'
         " Leaving this because I go back and forth on changing it.
         let s:lightgray = '#e4e4e4'
-        highlight String   guibg=#efffef guifg=#5f8787 | call s:FormatGroup('String')
         highlight Operator guibg=#ebefff guifg=#005faf | call s:FormatGroup('Operator')
     else
         let s:darkyellow = '#dfaf00'
         let s:lightyellow = '#ffdf5f'
         let s:lightblue = '#5fafff'
         let s:lightgray = '#e4e4e4'
-        highlight String   ctermbg=NONE ctermfg=64   guibg=NONE guifg=#5f8700 | call s:FormatGroup('String')
         highlight Operator ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE    | call s:FormatGroup('Operator')
     endif
 
@@ -101,6 +99,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Error            ctermbg=NONE ctermfg=88   guibg=NONE    guifg=#870000 | call s:FormatGroup('Error')
     highlight Identifier       ctermbg=NONE ctermfg=24   guibg=NONE    guifg=#005faf | call s:FormatGroup('Identifier')
     highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call s:FormatGroup('Ignore')
+    highlight String           ctermbg=NONE ctermfg=28   guibg=NONE    guifg=#008700 | call s:FormatGroup('String')
 
     highlight PreProc          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('PreProc')
     highlight Special          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call s:FormatGroup('Special')
