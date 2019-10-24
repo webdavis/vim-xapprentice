@@ -421,8 +421,8 @@ let s:links = [
 augroup Apprentice
     autocmd!
     autocmd ColorScheme * if expand('<amatch>') =~# 'xapprentice_light'
-                            \ | for link in s:links | execute 'hi link' link[0] link[1] | endfor
-                            \ | else | for link in s:links | execute 'hi link' link[0] 'NONE' | endfor
+                            \ | for link in s:links | execute 'highlight link' link[0] link[1] | endfor
+                            \ | else | for link in s:links | execute 'highlight link' link[0] 'NONE' | endfor
                             \ | endif
 augroup END
 
