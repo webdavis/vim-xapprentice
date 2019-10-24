@@ -1,11 +1,11 @@
 let s:vim_attributes = ['bold', 'italic', 'underline', 'reverse', 'inverse', 'standout', 'undercurl']
 
 function! s:IsHighlightGroupInAttributeList(attribute, highlight_group)
-    return index(get(g:, eval(string('xapprentice_' . a:attribute . '_group')), []), a:highlight_group, 0, 1) >=? 0
+    return index(get(g:, eval(string('xapprentice_' . format#GetBackground() . '_' . a:attribute . '_group')), []), a:highlight_group, 0, 1) >=? 0
 endfunction
 
 function! s:IsAttributeOn(attribute)
-    return get(g:, eval(string('xapprentice_' . a:attribute)), 1)
+    return get(g:, eval(string('xapprentice_' . format#GetBackground() . '_' . a:attribute)), 1)
 endfunction
 
 function! s:CanAddAttribute(attribute, highlight_group)
@@ -49,12 +49,16 @@ function! format#FormatHighlightGroup(highlight_group, ...)
     execute 'highlight ' . a:highlight_group . ' ' . l:cterm . ' ' . l:gui . ' ' . l:term
 endfunction
 
+function format#GetBackground() abort
+    return &background
+endfunction
+
 function! format#PersistAttribute(group, attribute)
-    execute 'let g:xapprentice_' . a:attribute . '_group = get(g:, "xapprentice_' . a:attribute . '_group", [])'
-    if index(eval('g:xapprentice_' . a:attribute . '_group'), a:group) ==? -1
-        call add(eval('g:xapprentice_' . a:attribute . '_group'), a:group)
+    execute 'let g:xapprentice_' . format#GetBackground() . '_' . a:attribute . '_group = get(g:, "xapprentice_' . format#GetBackground() . '_' . a:attribute . '_group", [])'
+    if index(eval('g:xapprentice_' . format#GetBackground() . '_' . a:attribute . '_group'), a:group) ==? -1
+        call add(eval('g:xapprentice_' . format#GetBackground() . '_' . a:attribute . '_group'), a:group)
     else
-        call filter(eval('g:xapprentice_' . a:attribute . '_group'), 'v:val !=# a:group')
+        call filter(eval('g:xapprentice_' . format#GetBackground() . '_' . a:attribute . '_group'), 'v:val !=# a:group')
     endif
 endfunction
 
@@ -129,10 +133,12 @@ function! format#Set(attribute, bang, ...)
             call s:Add(l:highlight_group, a:attribute)
         endfor
 	return 0
-    elseif a:bang || get(g:, eval(string('xapprentice_' . a:attribute)) , 1)
-	execute 'let g:xapprentice_' . a:attribute . ' = 0'
+    elseif a:bang || get(g:, eval(string('xapprentice_' . format#GetBackground() . '_' . a:attribute)) , 1)
+	execute 'let g:xapprentice_' . format#GetBackground() . '_' . a:attribute . ' = 0'
+        echo format#GetBackground()
     else
-	execute 'let g:xapprentice_' . a:attribute . ' = 1'
+	execute 'let g:xapprentice_'. format#GetBackground() . '_' . a:attribute . ' = 1'
+        echo format#GetBackground()
     endif
 
     execute 'colorscheme ' . g:colors_name
