@@ -23,10 +23,12 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
         let s:lightyellow = '#ceb46c'
+        let s:darkyellow = '#b29c5e'
         let s:darkgray = '#343434'
         let s:metal = '#5e5e42'
     else
         let s:lightyellow = '#ffdf87'
+        let s:darkyellow = '#ffdf87'
         let s:darkgray = '#3a3a3a'
         let s:metal = '#626262'
     endif
@@ -73,7 +75,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         highlight CocHintHighlight      ctermbg=65   ctermfg=0    guibg=#5f875f guifg=#000000 | call format#FormatHighlightGroup('CocHintHighlight')
         execute 'highlight CocWarningSign ctermbg=234 ctermfg=222 guibg=#1c1c1c guifg=' . s:lightyellow | call format#FormatHighlightGroup('CocWarningSign')
         execute 'highlight CocWarningVirtualText ctermbg=NONE ctermfg=222 guibg=NONE guifg=' . s:lightyellow | call format#FormatHighlightGroup('CocWarningVirtualText')
-        execute 'highlight CocWarningHighlight ctermbg=222 ctermfg=0 guibg=' . s:lightyellow . ' guifg=#000000' | call format#FormatHighlightGroup('CocWarningHighlight')
+        execute 'highlight CocWarningHighlight ctermbg=222 ctermfg=0 guibg='.s:darkyellow.' guifg=#000000' | call format#FormatHighlightGroup('CocWarningHighlight')
         highlight CocErrorSign          ctermbg=234  ctermfg=95   guibg=#1c1c1c guifg=#875f5f | call format#FormatHighlightGroup('CocErrorSign')
         highlight CocErrorVirtualText   ctermbg=NONE ctermfg=95   guibg=NONE    guifg=#875f5f | call format#FormatHighlightGroup('CocErrorVirtualText')
         highlight CocErrorHighlight     ctermbg=95   ctermfg=232  guibg=#875f5f guifg=#080808 | call format#FormatHighlightGroup('CocErrorHighlight')
@@ -151,7 +153,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     " HTML
     highlight htmlH1           ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call format#FormatHighlightGroup('htmlH1', 'bold')
-    highlight htmlBold         ctermbg=NONE ctermfg=222  guibg=NONE    guifg=#ffdf87 | call format#FormatHighlightGroup('htmlBold', 'bold')
+    execute 'highlight htmlBold ctermbg=NONE ctermfg=222 guibg=NONE guifg='.s:lightyellow | call format#FormatHighlightGroup('htmlBold', 'bold')
 
     if has('gui_running')
         highlight SpellBad          ctermbg=230  ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#af5f87 | call format#FormatHighlightGroup('SpellBad', 'undercurl')
