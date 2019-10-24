@@ -22,7 +22,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     set background=dark
 
     if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
-        let s:lightyellow = '#e5c879'
+        let s:lightyellow = '#ceb46c'
         let s:darkgray = '#343434'
     else
         let s:lightyellow = '#ffdf87'
