@@ -39,7 +39,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight Folded           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call format#FormatHighlightGroup('Folded')
     highlight MatchParen       ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87 | call format#FormatHighlightGroup('MatchParen')
 
-    highlight Comment          ctermbg=NONE ctermfg=241  guibg=NONE    guifg=#626262 | call format#FormatHighlightGroup('Comment')
+    highlight Comment          ctermbg=NONE ctermfg=242  guibg=NONE    guifg=#6c6c6c | call format#FormatHighlightGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call format#FormatHighlightGroup('Conceal')
     highlight Constant         ctermbg=NONE ctermfg=137  guibg=NONE    guifg=#af875f | call format#FormatHighlightGroup('Constant')
     highlight Error            ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call format#FormatHighlightGroup('Error')
