@@ -24,9 +24,11 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
         let s:lightyellow = '#ceb46c'
         let s:darkgray = '#343434'
+        let s:metal = '#5e5e42'
     else
         let s:lightyellow = '#ffdf87'
         let s:darkgray = '#3a3a3a'
+        let s:metal = '#626262'
     endif
 
     highlight Normal           ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc | call format#FormatHighlightGroup('Normal')
@@ -62,7 +64,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     if exists('g:did_coc_loaded')
         highlight CocHighlightText      ctermbg=NONE ctermfg=32   guibg=NONE    guifg=#0087d7 | call format#FormatHighlightGroup('CocHighlightText')
         highlight CocFloating           ctermbg=237  ctermfg=250  guibg=#3a3a3a guifg=#bcbcbc | call format#FormatHighlightGroup('CocFloating')
-        highlight CocCodeLens           ctermbg=NONE ctermfg=241  guibg=NONE    guifg=#626262 | call format#FormatHighlightGroup('CocCodeLens')
+        execute 'highlight CocCodeLens ctermbg=NONE ctermfg=241  guibg=NONE    guifg='.s:metal | call format#FormatHighlightGroup('CocCodeLens')
         highlight CocInfoSign           ctermbg=234  ctermfg=68   guibg=#1c1c1c guifg=#5f87d7 | call format#FormatHighlightGroup('CocInfoSign')
         highlight CocInfoVirtualText    ctermbg=NONE ctermfg=68   guibg=NONE    guifg=#5f87d7 | call format#FormatHighlightGroup('CocInfoVirtualText')
         highlight CocInfoHighlight      ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call format#FormatHighlightGroup('CocInfoHighlight')
