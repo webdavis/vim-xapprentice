@@ -147,6 +147,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     " Markdown code.
     highlight mkdHeading       ctermbg=NONE ctermfg=26   guibg=NONE    guifg=#005fd7 | call format#FormatHighlightGroup('mkdHeading', 'bold')
     highlight htmlH1           ctermbg=NONE ctermfg=26   guibg=NONE    guifg=#005fd7 | call format#FormatHighlightGroup('htmlH1', 'bold')
+    highlight htmlBold         ctermbg=NONE ctermfg=56   guibg=NONE    guifg=#5f00d7 | call format#FormatHighlightGroup('htmlBold', 'bold')
 
     if has('gui_running')
         highlight SpellBad          ctermbg=230  ctermfg=236  guibg=NONE    guifg=#303030 guisp=#af87af | call format#FormatHighlightGroup('SpellBad', 'undercurl')
@@ -387,7 +388,6 @@ let s:links = [
         \ ['htmlLink', 'Statement'],
         \ ['htmlSpecialTagName', 'htmlTagName'],
         \ ['htmlTag', 'htmlTagName'],
-        \ ['htmlBold', 'Normal'],
         \ ['htmlItalic', 'Error'],
         \ ['markdownHeadingDelimiter', 'htmlH1'],
         \ ['markdownCode', 'SpecialKey'],
