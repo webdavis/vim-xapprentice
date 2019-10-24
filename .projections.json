@@ -1,0 +1,6 @@
+{
+  "colors/xapprentice_dark.vim": {
+    "type": "source",
+    "alternate": "colors/xapprentice_light.vim"
+  }
+}
