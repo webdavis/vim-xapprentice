@@ -418,7 +418,7 @@ let s:links = [
         \ ['vimFunction', 'FunctionStatement'],
         \ ]
 
-augroup Apprentice
+augroup Xapprentice
     autocmd!
     autocmd ColorScheme * if expand('<amatch>') =~# 'xapprentice_light'
                             \ | for link in s:links | execute 'highlight link' link[0] link[1] | endfor
