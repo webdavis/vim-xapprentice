@@ -151,12 +151,12 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
     if has('gui_running')
         highlight SpellBad          ctermbg=230  ctermfg=236  guibg=NONE    guifg=#303030 guisp=#af87af | call format#FormatHighlightGroup('SpellBad', 'undercurl')
-        highlight SpellCap          ctermbg=73   ctermfg=236  guibg=NONE    guifg=#303030 guisp=#5fafaf | call format#FormatHighlightGroup('SpellCap', 'undercurl')
+        highlight SpellCap          ctermbg=73   ctermfg=236  guibg=NONE    guifg=#303030 guisp=#5fd7af | call format#FormatHighlightGroup('SpellCap', 'undercurl')
         highlight SpellLocal        ctermbg=65   ctermfg=236  guibg=NONE    guifg=#303030 guisp=#87d7af | call format#FormatHighlightGroup('SpellLocal', 'undercurl')
         highlight SpellRare         ctermbg=172  ctermfg=236  guibg=NONE    guifg=#303030 guisp=#ffaf5f | call format#FormatHighlightGroup('SpellRare', 'undercurl')
     else
         highlight SpellBad          ctermbg=139  ctermfg=236  guibg=#af87af guifg=#303030 guisp=NONE    | call format#FormatHighlightGroup('SpellBad', 'undercurl')
-        highlight SpellCap          ctermbg=73   ctermfg=236  guibg=#5fafaf guifg=#303030 guisp=NONE    | call format#FormatHighlightGroup('SpellCap', 'undercurl')
+        highlight SpellCap          ctermbg=79   ctermfg=236  guibg=#5fd7af guifg=#303030 guisp=NONE    | call format#FormatHighlightGroup('SpellCap', 'undercurl')
         highlight SpellLocal        ctermbg=115  ctermfg=236  guibg=#87d7af guifg=#303030 guisp=NONE    | call format#FormatHighlightGroup('SpellLocal', 'undercurl')
         highlight SpellRare         ctermbg=215  ctermfg=236  guibg=#ffaf5f guifg=#303030 guisp=NONE    | call format#FormatHighlightGroup('SpellRare', 'undercurl')
     endif
@@ -356,7 +356,7 @@ let g:terminal_ansi_colors = [
         \ '#ffdfaf',
         \ '#00afd7',
         \ '#8787af',
-        \ '#5fafaf',
+        \ '#5fd7af',
         \ '#ffffdf'
         \ ]
 
