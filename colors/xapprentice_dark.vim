@@ -27,7 +27,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:lightyellow = '#ceb46c'
         let s:darkyellow = '#b29c5e'
         let s:darkgray = '#2f3334'
-        let s:purple = '#79799d'
+        let s:purple = '#474045'
         let s:chrome = '#31363b'
         let s:metal = '#656767'
         let s:tint = '#323536'
