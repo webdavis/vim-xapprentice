@@ -29,7 +29,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:darkgray = '#2f3334'
         let s:purple = '#79799d'
         let s:chrome = '#31363b'
-        let s:metal = '#5e5e42'
+        let s:metal = '#656767'
         let s:tint = '#323536'
     else
         let s:background = '#262626'
