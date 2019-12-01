@@ -22,66 +22,159 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     set background=dark
 
     if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
+        let s:background = '#232627'
+        let s:black = '#1c1e1f'
         let s:lightyellow = '#ceb46c'
         let s:darkyellow = '#b29c5e'
-        let s:darkgray = '#343434'
+        let s:darkgray = '#2f3334'
+        let s:purple = '#79799d'
+        let s:chrome = '#31363b'
         let s:metal = '#5e5e42'
+        let s:tint = '#323536'
     else
+        let s:background = '#262626'
+        let s:black = '#1c1c1c'
         let s:lightyellow = '#ffdf87'
         let s:darkyellow = '#ffdf87'
         let s:darkgray = '#3a3a3a'
+        let s:purple = '#8787af'
+        let s:chrome = '#3a3a3a'
         let s:metal = '#626262'
+        let s:tint = '#303030'
     endif
 
-    highlight Normal           ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc | call format#FormatHighlightGroup('Normal')
-    highlight LineNr           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call format#FormatHighlightGroup('LineNr')
-    highlight FoldColumn       ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call format#FormatHighlightGroup('FoldColumn')
-    highlight Folded           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call format#FormatHighlightGroup('Folded')
-    highlight MatchParen       ctermbg=NONE ctermfg=132  guibg=NONE    guifg=#af5f87 | call format#FormatHighlightGroup('MatchParen')
+    execute 'highlight Normal           ctermbg=235  ctermfg=250  guibg='.s:background.' guifg=#bcbcbc'        | call format#FormatHighlightGroup('Normal')
+    execute 'highlight LineNr           ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg=#6c6c6c'        | call format#FormatHighlightGroup('LineNr')
+    execute 'highlight FoldColumn       ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg=#6c6c6c'        | call format#FormatHighlightGroup('FoldColumn')
+    execute 'highlight Folded           ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg=#6c6c6c'        | call format#FormatHighlightGroup('Folded')
+             highlight MatchParen       ctermbg=NONE ctermfg=132  guibg=NONE             guifg=#af5f87         | call format#FormatHighlightGroup('MatchParen')
 
-    highlight Comment          ctermbg=NONE ctermfg=242  guibg=NONE    guifg=#6c6c6c | call format#FormatHighlightGroup('Comment')
-    highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call format#FormatHighlightGroup('Conceal')
-    highlight Constant         ctermbg=NONE ctermfg=137  guibg=NONE    guifg=#af875f | call format#FormatHighlightGroup('Constant')
-    highlight Error            ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call format#FormatHighlightGroup('Error')
-    highlight Identifier       ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call format#FormatHighlightGroup('Identifier')
-    highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call format#FormatHighlightGroup('Ignore')
+             highlight Comment          ctermbg=NONE ctermfg=242  guibg=NONE             guifg=#6c6c6c         | call format#FormatHighlightGroup('Comment')
+             highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE             guifg=#bcbcbc         | call format#FormatHighlightGroup('Conceal')
+             highlight Constant         ctermbg=NONE ctermfg=137  guibg=NONE             guifg=#af875f         | call format#FormatHighlightGroup('Constant')
+             highlight Error            ctermbg=NONE ctermfg=131  guibg=NONE             guifg=#af5f5f         | call format#FormatHighlightGroup('Error')
+             highlight Identifier       ctermbg=NONE ctermfg=67   guibg=NONE             guifg=#5f87af         | call format#FormatHighlightGroup('Identifier')
+             highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE             guifg=NONE            | call format#FormatHighlightGroup('Ignore')
 
-    highlight PreProc          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call format#FormatHighlightGroup('PreProc')
-    highlight Special          ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call format#FormatHighlightGroup('Special')
-    highlight Delimiter        ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call format#FormatHighlightGroup('Delimiter')
-    highlight Statement        ctermbg=NONE ctermfg=110  guibg=NONE    guifg=#8fafd7 | call format#FormatHighlightGroup('Statement')
-    highlight String           ctermbg=NONE ctermfg=108  guibg=NONE    guifg=#87af87 | call format#FormatHighlightGroup('String')
-    highlight Todo             ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call format#FormatHighlightGroup('Todo')
-    highlight Type             ctermbg=NONE ctermfg=103  guibg=NONE    guifg=#8787af | call format#FormatHighlightGroup('Type')
-    highlight Underlined       ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call format#FormatHighlightGroup('Underlined', 'underline')
+             highlight PreProc          ctermbg=NONE ctermfg=66   guibg=NONE             guifg=#5f8787         | call format#FormatHighlightGroup('PreProc')
+             highlight Special          ctermbg=NONE ctermfg=65   guibg=NONE             guifg=#5f875f         | call format#FormatHighlightGroup('Special')
+             highlight Delimiter        ctermbg=NONE ctermfg=65   guibg=NONE             guifg=#5f875f         | call format#FormatHighlightGroup('Delimiter')
+             highlight Statement        ctermbg=NONE ctermfg=110  guibg=NONE             guifg=#8fafd7         | call format#FormatHighlightGroup('Statement')
+             highlight String           ctermbg=NONE ctermfg=108  guibg=NONE             guifg=#87af87         | call format#FormatHighlightGroup('String')
+             highlight Todo             ctermbg=NONE ctermfg=250  guibg=NONE             guifg=#bcbcbc         | call format#FormatHighlightGroup('Todo')
+             highlight Type             ctermbg=NONE ctermfg=103  guibg=NONE             guifg=#8787af         | call format#FormatHighlightGroup('Type')
+             highlight Underlined       ctermbg=NONE ctermfg=66   guibg=NONE             guifg=#5f8787         | call format#FormatHighlightGroup('Underlined', 'underline')
+             highlight NonText          ctermbg=NONE ctermfg=239  guibg=NONE             guifg=#4e4e4e         | call format#FormatHighlightGroup('NonText')
+    execute 'highlight Pmenu            ctermbg=237  ctermfg=250  guibg='.s:darkgray.'   guifg=#bcbcbc'        | call format#FormatHighlightGroup('Pmenu')
+             highlight PmenuSbar        ctermbg=241  ctermfg=NONE guibg=#626262          guifg=NONE            | call format#FormatHighlightGroup('PmenuSbar')
+    execute 'highlight PmenuSel         ctermbg=103  ctermfg=235  guibg=#8787af          guifg='.s:background  | call format#FormatHighlightGroup('PmenuSel')
+    execute 'highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg='.s:purple.'     guifg='.s:purple      | call format#FormatHighlightGroup('PmenuThumb')
+             highlight ErrorMsg         ctermbg=NONE ctermfg=131  guibg=NONE             guifg=#af5f5f         | call format#FormatHighlightGroup('ErrorMsg')
+    execute 'highlight ModeMsg          ctermbg=108  ctermfg=235  guibg=#5f87af          guifg='.s:background  | call format#FormatHighlightGroup('ModeMsg')
+             highlight MoreMsg          ctermbg=NONE ctermfg=66   guibg=NONE             guifg=#5f8787         | call format#FormatHighlightGroup('MoreMsg')
+             highlight Question         ctermbg=NONE ctermfg=66   guibg=NONE             guifg=#5f8787         | call format#FormatHighlightGroup('Question')
+    execute 'highlight WarningMsg       ctermbg=NONE ctermfg=222  guibg=NONE             guifg='.s:lightyellow | call format#FormatHighlightGroup('WarningMsg')
+             highlight TabLine          ctermbg=238  ctermfg=246  guibg=#444444          guifg=#949494         | call format#FormatHighlightGroup('TabLine')
+             highlight TabLineFill      ctermbg=238  ctermfg=250  guibg=#444444          guifg=#bcbcbc         | call format#FormatHighlightGroup('TabLineFill')
+             highlight TabLineSel       ctermbg=65   ctermfg=0    guibg=#5f8787          guifg=#000000         | call format#FormatHighlightGroup('TabLineSel')
+             highlight Cursor           ctermbg=242  ctermfg=NONE guibg=#6c6c6c          guifg=NONE            | call format#FormatHighlightGroup('Cursor')
+    execute 'highlight CursorColumn     ctermbg=236  ctermfg=NONE guibg='.s:tint.'       guifg=NONE'           | call format#FormatHighlightGroup('CursorColumn')
+    execute 'highlight CursorLineNr     ctermbg=236  ctermfg=73   guibg='.s:tint.'       guifg=#5fafaf'        | call format#FormatHighlightGroup('CursorLineNr')
+    execute 'highlight CursorLine       ctermbg=236  ctermfg=NONE guibg='.s:tint.'       guifg=NONE'           | call format#FormatHighlightGroup('CursorLine')
+             highlight helpLeadBlank    ctermbg=NONE ctermfg=NONE guibg=NONE             guifg=NONE            | call format#FormatHighlightGroup('helpLeadBlank')
+             highlight helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE             guifg=NONE            | call format#FormatHighlightGroup('helpNormal')
+             highlight StatusLine       ctermbg=238  ctermfg=250  guibg=#444444          guifg=#bcbcbc         | call format#FormatHighlightGroup('StatusLine')
+             highlight StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444          guifg=#878787         | call format#FormatHighlightGroup('StatusLineNC')
+    execute 'highlight StatusLineTerm   ctermbg=101  ctermfg=234  guibg=#af875f          guifg='.s:black       | call format#FormatHighlightGroup('StatusLineTerm')
+             highlight StatusLineTermNC ctermbg=238  ctermfg=101  guibg=#444444          guifg=#878787         | call format#FormatHighlightGroup('StatusLineTermNC')
+    execute 'highlight Visual           ctermbg=103  ctermfg=235  guibg=#8787af          guifg='.s:background  | call format#FormatHighlightGroup('Visual')
+             highlight VisualNOS        ctermbg=NONE ctermfg=NONE guibg=NONE             guifg=NONE            | call format#FormatHighlightGroup('VisualNOS')
+             highlight VertSplit        ctermbg=238  ctermfg=238  guibg=#444444          guifg=#444444         | call format#FormatHighlightGroup('VertSplit')
+    execute 'highlight WildMenu         ctermbg=131  ctermfg=235  guibg=#5f87af          guifg='.s:background  | call format#FormatHighlightGroup('WildMenu')
+             highlight Function         ctermbg=NONE ctermfg=250  guibg=NONE             guifg=#bcbcbc         | call format#FormatHighlightGroup('Function')
+             highlight SpecialKey       ctermbg=NONE ctermfg=241  guibg=NONE             guifg=#626262         | call format#FormatHighlightGroup('SpecialKey')
+             highlight Title            ctermbg=NONE ctermfg=231  guibg=NONE             guifg=#ffffdf         | call format#FormatHighlightGroup('Title')
+    execute 'highlight DiffAdd          ctermbg=108  ctermfg=235  guibg=#87af87          guifg='.s:background  | call format#FormatHighlightGroup('DiffAdd')
+    execute 'highlight DiffChange       ctermbg=67   ctermfg=235  guibg=#5f87af          guifg='.s:background  | call format#FormatHighlightGroup('DiffChange')
+    execute 'highlight DiffDelete       ctermbg=131  ctermfg=235  guibg=#af5f5f          guifg='.s:background  | call format#FormatHighlightGroup('DiffDelete')
+    execute 'highlight DiffText         ctermbg=172  ctermfg=235  guibg=#d78700          guifg='.s:background  | call format#FormatHighlightGroup('DiffText')
+    execute 'highlight IncSearch        ctermbg=131  ctermfg=235  guibg=#af5f5f          guifg='.s:background  | call format#FormatHighlightGroup('IncSearch')
+    execute 'highlight Search           ctermbg=223  ctermfg=235  guibg=#bcbcbc          guifg='.s:background  | call format#FormatHighlightGroup('Search')
+             highlight Directory        ctermbg=NONE ctermfg=67   guibg=NONE             guifg=#5f87af         | call format#FormatHighlightGroup('Directory')
+    execute 'highlight SignColumn       ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg=#6c6c6c'        | call format#FormatHighlightGroup('SignColumn')
+    execute 'highlight ColorColumn      ctermbg=234  ctermfg=NONE guibg='.s:black.'      guifg=NONE'           | call format#FormatHighlightGroup('ColorColumn')
+             highlight QuickFixLine     ctermbg=236  ctermfg=NONE guibg=#303030          guifg=NONE            | call format#FormatHighlightGroup('QuickFixLine')
+             highlight qfLineNr         ctermbg=NONE ctermfg=137  guibg=NONE             guifg=#af875f         | call format#FormatHighlightGroup('qfLineNr')
+             highlight qfFileName       ctermbg=NONE ctermfg=67   guibg=NONE             guifg=#5f87af         | call format#FormatHighlightGroup('rfFileName')
+             highlight qfError          ctermbg=NONE ctermfg=131  guibg=NONE             guifg=#af5f5f         | call format#FormatHighlightGroup('qfError')
+             highlight ExtraWhitespace  ctermbg=132  ctermfg=NONE guibg=#af5f87          guifg=NONE            | call format#FormatHighlightGroup('ExtraWhitespace')
+             highlight DebugPC          ctermbg=67   ctermfg=NONE guibg=#5f87af          guifg=NONE            | call format#FormatHighlightGroup('DebugPC')
+             highlight DebugBreakpoint  ctermbg=131  ctermfg=NONE guibg=#af5f5f          guifg=NONE            | call format#FormatHighlightGroup('DebugBreakpoint')
+             " HTML
+             highlight htmlH1           ctermbg=NONE ctermfg=67   guibg=NONE             guifg=#5f87af         | call format#FormatHighlightGroup('htmlH1', 'bold')
+    execute 'highlight htmlBold         ctermbg=NONE ctermfg=222  guibg=NONE             guifg='.s:lightyellow | call format#FormatHighlightGroup('htmlBold', 'bold')
 
-    highlight NonText          ctermbg=NONE ctermfg=239  guibg=NONE    guifg=#4e4e4e | call format#FormatHighlightGroup('NonText')
-
-    execute 'highlight Pmenu ctermbg=237  ctermfg=250  guibg='.s:darkgray.' guifg=#bcbcbc' | call format#FormatHighlightGroup('Pmenu')
-    highlight PmenuSbar        ctermbg=241  ctermfg=NONE guibg=#626262 guifg=NONE    | call format#FormatHighlightGroup('PmenuSbar')
-    highlight PmenuSel         ctermbg=103  ctermfg=235  guibg=#8787af guifg=#262626 | call format#FormatHighlightGroup('PmenuSel')
-    highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#5f8787 guifg=#5f8787 | call format#FormatHighlightGroup('PmenuThumb')
+    if get(g:, 'xapprentice_ale', 1) ==? 1
+        execute 'highlight ALEError              ctermbg=131  ctermfg=235   guibg=#af5f5f           guifg='.s:background  | call format#FormatHighlightGroup('ALEError')
+        execute 'highlight ALEErrorSign          ctermbg=234  ctermfg=131   guibg='.s:black.'       guifg=#af5f5f'        | call format#FormatHighlightGroup('ALEErrorSign')
+                 highlight ALEErrorLine          ctermbg=NONE ctermfg=NONE  guibg=NONE              guifg=NONE            | call format#FormatHighlightGroup('ALEErrorLine')
+        execute 'highlight ALEWarning            ctermbg=222  ctermfg=235   guibg='.s:lightyellow.' guifg='.s:background  | call format#FormatHighlightGroup('ALEWarning')
+        execute 'highlight ALEWarningSign        ctermbg=234  ctermfg=222   guibg='.s:black.'       guifg='.s:lightyellow | call format#FormatHighlightGroup('ALEWarningSign')
+                 highlight ALEWarningLine        ctermbg=NONE ctermfg=NONE  guibg=NONE              guifg=NONE            | call format#FormatHighlightGroup('ALEWarningLine')
+        execute 'highlight ALEInfo               ctermbg=68   ctermfg=235   guibg=#5f87d7           guifg='.s:background  | call format#FormatHighlightGroup('ALEInfo')
+        execute 'highlight ALEInfoSign           ctermbg=234  ctermfg=68    guibg='.s:black.'       guifg=#5f87d7'        | call format#FormatHighlightGroup('ALEInfoSign')
+                 highlight ALEInfoLine           ctermbg=NONE ctermfg=NONE  guibg=NONE              guifg=NONE            | call format#FormatHighlightGroup('ALEInfoLine')
+    else
+        execute 'highlight ALEError              ctermbg=131  ctermfg=131   guibg=#af5f5f           guifg='.s:background  | call format#FormatHighlightGroup('ALEError')
+        execute 'highlight ALEErrorSign          ctermbg=235  ctermfg=131   guibg='.s:black.'       guifg=#af5f5f'        | call format#FormatHighlightGroup('ALEErrorSign')
+        execute 'highlight ALEErrorLine          ctermbg=131  ctermfg=235   guibg=#af5f5f           guifg='.s:background  | call format#FormatHighlightGroup('ALEErrorLine')
+        execute 'highlight ALEWarning            ctermbg=222  ctermfg=235   guibg='.s:lightyellow.' guifg='.s:background  | call format#FormatHighlightGroup('ALEWarning')
+        execute 'highlight ALEWarningSign        ctermbg=235  ctermfg=222   guibg='.s:black.'       guifg='.s:lightyellow | call format#FormatHighlightGroup('ALEWarningSign')
+        execute 'highlight ALEWarningLine        ctermbg=222  ctermfg=235   guibg='.s:lightyellow.' guifg='.s:background  | call format#FormatHighlightGroup('ALEWarningLine')
+        execute 'highlight ALEInfo               ctermbg=68   ctermfg=235   guibg=#5f87d7           guifg='.s:background  | call format#FormatHighlightGroup('ALEInfo')
+        execute 'highlight ALEInfoSign           ctermbg=235  ctermfg=68    guibg='.s:black.'       guifg=#5f87d7'        | call format#FormatHighlightGroup('ALEInfoSign')
+        execute 'highlight ALEInfoLine           ctermbg=68   ctermfg=235   guibg=#5f87d7           guifg='.s:background  | call format#FormatHighlightGroup('ALEInfoLine')
+    endif
 
     " Requires neoclide/coc.nvim to be installed.
     if exists('g:did_coc_loaded')
-        highlight CocHighlightText      ctermbg=235  ctermfg=32   guibg=#262626 guifg=#0087d7 | call format#FormatHighlightGroup('CocHighlightText')
-        highlight CocFloating           ctermbg=237  ctermfg=250  guibg=#3a3a3a guifg=#bcbcbc | call format#FormatHighlightGroup('CocFloating')
-        execute 'highlight CocCodeLens ctermbg=NONE ctermfg=241  guibg=NONE    guifg='.s:metal | call format#FormatHighlightGroup('CocCodeLens')
-        highlight CocInfoSign           ctermbg=234  ctermfg=68   guibg=#1c1c1c guifg=#5f87d7 | call format#FormatHighlightGroup('CocInfoSign')
-        highlight CocInfoVirtualText    ctermbg=NONE ctermfg=68   guibg=NONE    guifg=#5f87d7 | call format#FormatHighlightGroup('CocInfoVirtualText')
-        highlight CocInfoHighlight      ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call format#FormatHighlightGroup('CocInfoHighlight')
-        highlight CocHintSign           ctermbg=234  ctermfg=65   guibg=#1c1c1c guifg=#5f875f | call format#FormatHighlightGroup('CocHintSign')
-        highlight CocHintVirtualText    ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f | call format#FormatHighlightGroup('CocHintVirtualText')
-        highlight CocHintHighlight      ctermbg=65   ctermfg=0    guibg=#5f875f guifg=#000000 | call format#FormatHighlightGroup('CocHintHighlight')
-        execute 'highlight CocWarningSign ctermbg=234 ctermfg=222 guibg=#1c1c1c guifg=' . s:lightyellow | call format#FormatHighlightGroup('CocWarningSign')
-        execute 'highlight CocWarningVirtualText ctermbg=NONE ctermfg=222 guibg=NONE guifg=' . s:lightyellow | call format#FormatHighlightGroup('CocWarningVirtualText')
-        execute 'highlight CocWarningHighlight ctermbg=222 ctermfg=0 guibg='.s:darkyellow.' guifg=#000000' | call format#FormatHighlightGroup('CocWarningHighlight')
-        highlight CocErrorSign          ctermbg=234  ctermfg=95   guibg=#1c1c1c guifg=#875f5f | call format#FormatHighlightGroup('CocErrorSign')
-        highlight CocErrorVirtualText   ctermbg=NONE ctermfg=95   guibg=NONE    guifg=#875f5f | call format#FormatHighlightGroup('CocErrorVirtualText')
-        highlight CocErrorHighlight     ctermbg=95   ctermfg=232  guibg=#875f5f guifg=#080808 | call format#FormatHighlightGroup('CocErrorHighlight')
-
+        execute 'highlight CocHighlightText      ctermbg=235  ctermfg=32    guibg='.s:background.'  guifg=#0087d7'        | call format#FormatHighlightGroup('CocHighlightText')
+        execute 'highlight CocFloating           ctermbg=237  ctermfg=250   guibg='.s:chrome.'      guifg=#bcbcbc'        | call format#FormatHighlightGroup('CocFloating')
+        execute 'highlight CocCodeLens           ctermbg=NONE ctermfg=241   guibg=NONE              guifg='.s:metal       | call format#FormatHighlightGroup('CocCodeLens')
+        execute 'highlight CocInfoSign           ctermbg=234  ctermfg=68    guibg='.s:black.'       guifg=#5f87d7'        | call format#FormatHighlightGroup('CocInfoSign')
+                 highlight CocInfoVirtualText    ctermbg=NONE ctermfg=68    guibg=NONE              guifg=#5f87d7         | call format#FormatHighlightGroup('CocInfoVirtualText')
+                 highlight CocInfoHighlight      ctermbg=NONE ctermfg=NONE  guibg=NONE              guifg=NONE            | call format#FormatHighlightGroup('CocInfoHighlight')
+        execute 'highlight CocHintSign           ctermbg=234  ctermfg=65    guibg='.s:black.'       guifg=#5f875f'        | call format#FormatHighlightGroup('CocHintSign')
+                 highlight CocHintVirtualText    ctermbg=NONE ctermfg=65    guibg=NONE              guifg=#5f875f         | call format#FormatHighlightGroup('CocHintVirtualText')
+                 highlight CocHintHighlight      ctermbg=65   ctermfg=0     guibg=#5f875f           guifg=#000000         | call format#FormatHighlightGroup('CocHintHighlight')
+        execute 'highlight CocWarningSign        ctermbg=234  ctermfg=222   guibg='.s:black.'       guifg='.s:lightyellow | call format#FormatHighlightGroup('CocWarningSign')
+        execute 'highlight CocWarningVirtualText ctermbg=NONE ctermfg=222   guibg=NONE              guifg='.s:lightyellow | call format#FormatHighlightGroup('CocWarningVirtualText')
+        execute 'highlight CocWarningHighlight   ctermbg=222  ctermfg=0     guibg='.s:darkyellow.'  guifg=#000000'        | call format#FormatHighlightGroup('CocWarningHighlight')
+        execute 'highlight CocErrorSign          ctermbg=234  ctermfg=95    guibg='.s:black.'       guifg=#875f5f'        | call format#FormatHighlightGroup('CocErrorSign')
+                 highlight CocErrorVirtualText   ctermbg=NONE ctermfg=95    guibg=NONE              guifg=#875f5f         | call format#FormatHighlightGroup('CocErrorVirtualText')
+                 highlight CocErrorHighlight     ctermbg=95   ctermfg=232   guibg=#875f5f           guifg=#080808         | call format#FormatHighlightGroup('CocErrorHighlight')
         " Provided by the extension coc-highlight.
-        highlight HighlightedyankRegion ctermbg=108 ctermfg=235 guibg=#87af87 guifg=#262626 | call format#FormatHighlightGroup('HighlightedyankRegion')
+        execute 'highlight HighlightedyankRegion ctermbg=108  ctermfg=235   guibg=#87af87           guifg='.s:background  | call format#FormatHighlightGroup('HighlightedyankRegion')
+    endif
+
+    if exists('g:loaded_quick_scope')
+        " Requires unblevable/quick-scope to be installed.
+                 highlight QuickScopePrimary     ctermbg=NONE ctermfg=15    guibg=NONE              guifg=#ffffff         | call format#FormatHighlightGroup('QuickScopePrimary', 'bold')
+                 highlight QuickScopeSecondary   ctermbg=NONE ctermfg=209   guibg=NONE              guifg=#ff875f         | call format#FormatHighlightGroup('QuickScopeSecondary', 'bold')
+    endif
+
+    if get(g:, 'xapprentice_signify', 1)
+        execute 'highlight SignifySignAdd        ctermbg=234  ctermfg=65    guibg='.s:black.'       guifg=#5f875f'        | call format#FormatHighlightGroup('SignifySignAdd')
+        execute 'highlight SignifySignDelete     ctermbg=234  ctermfg=132   guibg='.s:black.'       guifg=#af5f87'        | call format#FormatHighlightGroup('SignifySignDelete')
+        execute 'highlight SignifySignChange     ctermbg=234  ctermfg=67    guibg='.s:black.'       guifg=#5f87af'        | call format#FormatHighlightGroup('SignifySignChange')
+                 highlight link SignifySignDeleteFirstLine SignifySignDelete
+                 highlight link SignifySignChangeDelete    SignifySignChange
+    else
+                 highlight link SignifySignAdd             DiffAdd
+                 highlight link SignifySignDelete          DiffDelete
+                 highlight link SignifySignDeleteFirstLine SignifySignDelete
+                 highlight link SignifySignChange          DiffChange
+                 highlight link SignifySignChangeDelete    SignifySignChange
     endif
 
     " Requires ntpeters/vim-better-whitespace to be installed.
@@ -90,121 +183,16 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let g:better_whitespace_guicolor = '#875f5f'
     endif
 
-    " Requires unblevable/quick-scope to be installed.
-    highlight QuickScopePrimary   guifg=#ffffff ctermfg=15  | call format#FormatHighlightGroup('QuickScopePrimary', 'bold')
-    highlight QuickScopeSecondary guifg=#ff875f ctermfg=209 | call format#FormatHighlightGroup('QuickScopeSecondary', 'bold')
-
-    highlight ErrorMsg         ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call format#FormatHighlightGroup('ErrorMsg')
-    highlight ModeMsg          ctermbg=108  ctermfg=235  guibg=#5f87af guifg=#262626 | call format#FormatHighlightGroup('ModeMsg')
-    highlight MoreMsg          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call format#FormatHighlightGroup('MoreMsg')
-    highlight Question         ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call format#FormatHighlightGroup('Question')
-    execute 'highlight WarningMsg ctermbg=NONE ctermfg=222 guibg=NONE guifg=' . s:lightyellow | call format#FormatHighlightGroup('WarningMsg')
-
-    highlight TabLine          ctermbg=238  ctermfg=246  guibg=#444444 guifg=#949494 | call format#FormatHighlightGroup('TabLine')
-    highlight TabLineFill      ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call format#FormatHighlightGroup('TabLineFill')
-    highlight TabLineSel       ctermbg=65   ctermfg=0    guibg=#5f8787 guifg=#000000 | call format#FormatHighlightGroup('TabLineSel')
-
-    highlight Cursor           ctermbg=242  ctermfg=NONE guibg=#6c6c6c guifg=NONE    | call format#FormatHighlightGroup('Cursor')
-    highlight CursorColumn     ctermbg=236  ctermfg=NONE guibg=#303030 guifg=NONE    | call format#FormatHighlightGroup('CursorColumn')
-    highlight CursorLineNr     ctermbg=236  ctermfg=73   guibg=#303030 guifg=#5fafaf | call format#FormatHighlightGroup('CursorLineNr')
-    highlight CursorLine       ctermbg=236  ctermfg=NONE guibg=#303030 guifg=NONE    | call format#FormatHighlightGroup('CursorLine')
-
-    highlight helpLeadBlank    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call format#FormatHighlightGroup('helpLeadBlank')
-    highlight helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call format#FormatHighlightGroup('helpNormal')
-
-    highlight StatusLine       ctermbg=238  ctermfg=250  guibg=#444444 guifg=#bcbcbc | call format#FormatHighlightGroup('StatusLine')
-    highlight StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call format#FormatHighlightGroup('StatusLineNC')
-
-    highlight StatusLineTerm   ctermbg=101  ctermfg=234  guibg=#af875f guifg=#1c1c1c | call format#FormatHighlightGroup('StatusLineTerm')
-    highlight StatusLineTermNC ctermbg=238  ctermfg=101  guibg=#444444 guifg=#878787 | call format#FormatHighlightGroup('StatusLineTermNC')
-
-    highlight Visual           ctermbg=103  ctermfg=235  guibg=#8787af guifg=#262626 | call format#FormatHighlightGroup('Visual')
-    highlight VisualNOS        ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    | call format#FormatHighlightGroup('VisualNOS')
-
-    highlight VertSplit        ctermbg=238  ctermfg=238  guibg=#444444 guifg=#444444 | call format#FormatHighlightGroup('VertSplit')
-    highlight WildMenu         ctermbg=131  ctermfg=235  guibg=#5f87af guifg=#262626 | call format#FormatHighlightGroup('WildMenu')
-
-    highlight Function         ctermbg=NONE ctermfg=250  guibg=NONE    guifg=#bcbcbc | call format#FormatHighlightGroup('Function')
-    highlight SpecialKey       ctermbg=NONE ctermfg=241  guibg=NONE    guifg=#626262 | call format#FormatHighlightGroup('SpecialKey')
-    highlight Title            ctermbg=NONE ctermfg=231  guibg=NONE    guifg=#ffffdf | call format#FormatHighlightGroup('Title')
-
-    highlight DiffAdd          ctermbg=108  ctermfg=235  guibg=#87af87 guifg=#262626 | call format#FormatHighlightGroup('DiffAdd')
-    highlight DiffChange       ctermbg=67   ctermfg=235  guibg=#5f87af guifg=#262626 | call format#FormatHighlightGroup('DiffChange')
-    highlight DiffDelete       ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call format#FormatHighlightGroup('DiffDelete')
-    highlight DiffText         ctermbg=172  ctermfg=235  guibg=#d78700 guifg=#262626 | call format#FormatHighlightGroup('DiffText')
-
-    highlight IncSearch        ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 | call format#FormatHighlightGroup('IncSearch')
-    highlight Search           ctermbg=223  ctermfg=235  guibg=#bcbcbc guifg=#262626 | call format#FormatHighlightGroup('Search')
-
-    highlight Directory        ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call format#FormatHighlightGroup('Directory')
-
-    highlight SignColumn       ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c | call format#FormatHighlightGroup('SignColumn')
-    highlight ColorColumn      ctermbg=234  ctermfg=NONE guibg=#1c1c1c guifg=NONE    | call format#FormatHighlightGroup('ColorColumn')
-
-    highlight QuickFixLine     ctermbg=236  ctermfg=NONE guibg=#303030 guifg=NONE    | call format#FormatHighlightGroup('QuickFixLine')
-    highlight qfLineNr         ctermbg=NONE ctermfg=137  guibg=NONE    guifg=#af875f | call format#FormatHighlightGroup('qfLineNr')
-    highlight qfFileName       ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call format#FormatHighlightGroup('rfFileName')
-    highlight qfError          ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f | call format#FormatHighlightGroup('qfError')
-
-    highlight ExtraWhitespace  ctermbg=132  ctermfg=NONE guibg=#af5f87 guifg=NONE    | call format#FormatHighlightGroup('ExtraWhitespace')
-
-    highlight DebugPC          ctermbg=67   ctermfg=NONE guibg=#5f87af guifg=NONE    | call format#FormatHighlightGroup('DebugPC')
-    highlight DebugBreakpoint  ctermbg=131  ctermfg=NONE guibg=#af5f5f guifg=NONE    | call format#FormatHighlightGroup('DebugBreakpoint')
-
-    " HTML
-    highlight htmlH1           ctermbg=NONE ctermfg=67   guibg=NONE    guifg=#5f87af | call format#FormatHighlightGroup('htmlH1', 'bold')
-    execute 'highlight htmlBold ctermbg=NONE ctermfg=222 guibg=NONE guifg='.s:lightyellow | call format#FormatHighlightGroup('htmlBold', 'bold')
-
     if has('gui_running')
-        highlight SpellBad          ctermbg=230  ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#af5f87 | call format#FormatHighlightGroup('SpellBad', 'undercurl')
-        highlight SpellCap          ctermbg=73   ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#5fafaf | call format#FormatHighlightGroup('SpellCap', 'undercurl')
-        highlight SpellLocal        ctermbg=65   ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#5f875f | call format#FormatHighlightGroup('SpellLocal', 'undercurl')
-        highlight SpellRare         ctermbg=172  ctermfg=250  guibg=NONE    guifg=#bcbcbc guisp=#d78700 | call format#FormatHighlightGroup('SpellRare', 'undercurl')
+                 highlight SpellBad   ctermbg=230 ctermfg=250 guibg=NONE    guifg=#bcbcbc     guisp=#af5f87 | call format#FormatHighlightGroup('SpellBad', 'undercurl')
+                 highlight SpellCap   ctermbg=73  ctermfg=250 guibg=NONE    guifg=#bcbcbc     guisp=#5fafaf | call format#FormatHighlightGroup('SpellCap', 'undercurl')
+                 highlight SpellLocal ctermbg=65  ctermfg=250 guibg=NONE    guifg=#bcbcbc     guisp=#5f875f | call format#FormatHighlightGroup('SpellLocal', 'undercurl')
+                 highlight SpellRare  ctermbg=172 ctermfg=250 guibg=NONE    guifg=#bcbcbc     guisp=#d78700 | call format#FormatHighlightGroup('SpellRare', 'undercurl')
     else
-        highlight SpellBad          ctermbg=132  ctermfg=234  guibg=#af5f87 guifg=#1c1c1c guisp=NONE    | call format#FormatHighlightGroup('SpellBad', 'undercurl')
-        highlight SpellCap          ctermbg=73   ctermfg=234  guibg=#5fafaf guifg=#1c1c1c guisp=NONE    | call format#FormatHighlightGroup('SpellCap', 'undercurl')
-        highlight SpellLocal        ctermbg=65   ctermfg=234  guibg=#5f875f guifg=#1c1c1c guisp=NONE    | call format#FormatHighlightGroup('SpellLocal', 'undercurl')
-        highlight SpellRare         ctermbg=172  ctermfg=234  guibg=#d78700 guifg=#1c1c1c guisp=NONE    | call format#FormatHighlightGroup('SpellRare', 'undercurl')
-    endif
-
-    if get(g:, 'xapprentice_ale', 1) ==? 1
-        highlight ALEError          ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626  | call format#FormatHighlightGroup('ALEError')
-        highlight ALEErrorSign      ctermbg=234  ctermfg=131  guibg=#1c1c1c guifg=#af5f5f  | call format#FormatHighlightGroup('ALEErrorSign')
-        highlight ALEErrorLine      ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call format#FormatHighlightGroup('ALEErrorLine')
-
-        execute 'highlight ALEWarning ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call format#FormatHighlightGroup('ALEWarning')
-        execute 'highlight ALEWarningSign ctermbg=234 ctermfg=222 guibg=#1c1c1c guifg=' s:lightyellow | call format#FormatHighlightGroup('ALEWarningSign')
-        highlight ALEWarningLine    ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call format#FormatHighlightGroup('ALEWarningLine')
-
-        highlight ALEInfo           ctermbg=68   ctermfg=235  guibg=#5f87d7 guifg=#262626  | call format#FormatHighlightGroup('ALEInfo')
-        highlight ALEInfoSign       ctermbg=234  ctermfg=68   guibg=#1c1c1c guifg=#5f87d7  | call format#FormatHighlightGroup('ALEInfoSign')
-        highlight ALEInfoLine       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE     | call format#FormatHighlightGroup('ALEInfoLine')
-    else
-        highlight ALEError          ctermbg=131  ctermfg=131  guibg=#af5f5f guifg=#262626  | call format#FormatHighlightGroup('ALEError')
-        highlight ALEErrorSign      ctermbg=235  ctermfg=131  guibg=#1c1c1c guifg=#af5f5f  | call format#FormatHighlightGroup('ALEErrorSign')
-        highlight ALEErrorLine      ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626  | call format#FormatHighlightGroup('ALEErrorLine')
-
-        execute 'highlight ALEWarning ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call format#FormatHighlightGroup('ALEWarning')
-        execute 'highlight ALEWarningSign ctermbg=235 ctermfg=222 guibg=#1c1c1c guifg=' . s:lightyellow | call format#FormatHighlightGroup('ALEWarningSign')
-        execute 'highlight ALEWarningLine ctermbg=222 ctermfg=235 guibg=' . s:lightyellow . ' guifg=#262626' | call format#FormatHighlightGroup('ALEWarningLine')
-
-        highlight ALEInfo           ctermbg=68   ctermfg=235  guibg=#5f87d7 guifg=#262626  | call format#FormatHighlightGroup('ALEInfo')
-        highlight ALEInfoSign       ctermbg=235  ctermfg=68   guibg=#1c1c1c guifg=#5f87d7  | call format#FormatHighlightGroup('ALEInfoSign')
-        highlight ALEInfoLine       ctermbg=68   ctermfg=235  guibg=#5f87d7 guifg=#262626  | call format#FormatHighlightGroup('ALEInfoLine')
-    endif
-
-    if get(g:, 'xapprentice_signify', 1)
-        highlight SignifySignAdd    ctermbg=234  ctermfg=65   guibg=#1c1c1c guifg=#5f875f  | call format#FormatHighlightGroup('SignifySignAdd')
-        highlight SignifySignDelete ctermbg=234  ctermfg=132  guibg=#1c1c1c guifg=#af5f87  | call format#FormatHighlightGroup('SignifySignDelete')
-        highlight SignifySignChange ctermbg=234  ctermfg=67   guibg=#1c1c1c guifg=#5f87af  | call format#FormatHighlightGroup('SignifySignChange')
-        highlight link SignifySignDeleteFirstLine SignifySignDelete
-        highlight link SignifySignChangeDelete SignifySignChange
-    else
-        highlight link SignifySignAdd DiffAdd
-        highlight link SignifySignDelete DiffDelete
-        highlight link SignifySignDeleteFirstLine SignifySignDelete
-        highlight link SignifySignChange DiffChange
-        highlight link SignifySignChangeDelete SignifySignChange
+        execute 'highlight SpellBad   ctermbg=132 ctermfg=234 guibg=#af5f87 guifg='.s:black.' guisp=NONE'   | call format#FormatHighlightGroup('SpellBad', 'undercurl')
+        execute 'highlight SpellCap   ctermbg=73  ctermfg=234 guibg=#5fafaf guifg='.s:black.' guisp=NONE'   | call format#FormatHighlightGroup('SpellCap', 'undercurl')
+        execute 'highlight SpellLocal ctermbg=65  ctermfg=234 guibg=#5f875f guifg='.s:black.' guisp=NONE'   | call format#FormatHighlightGroup('SpellLocal', 'undercurl')
+        execute 'highlight SpellRare  ctermbg=172 ctermfg=234 guibg=#d78700 guifg='.s:black.' guisp=NONE'   | call format#FormatHighlightGroup('SpellRare', 'undercurl')
     endif
 
 elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
