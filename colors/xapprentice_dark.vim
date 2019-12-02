@@ -28,6 +28,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:darkyellow = '#b29c5e'
         let s:darkgray = '#2f3334'
         let s:purple = '#474045'
+        let s:silver = '#7a7a7a'
         let s:chrome = '#31363b'
         let s:metal = '#656767'
         let s:tint = '#323536'
@@ -38,24 +39,23 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:darkyellow = '#ffdf87'
         let s:darkgray = '#3a3a3a'
         let s:purple = '#8787af'
+        let s:silver = '#6c6c6c'
         let s:chrome = '#3a3a3a'
         let s:metal = '#626262'
         let s:tint = '#303030'
     endif
 
     execute 'highlight Normal           ctermbg=235  ctermfg=250  guibg='.s:background.' guifg=#bcbcbc'        | call format#FormatHighlightGroup('Normal')
-    execute 'highlight LineNr           ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg=#6c6c6c'        | call format#FormatHighlightGroup('LineNr')
-    execute 'highlight FoldColumn       ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg=#6c6c6c'        | call format#FormatHighlightGroup('FoldColumn')
-    execute 'highlight Folded           ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg=#6c6c6c'        | call format#FormatHighlightGroup('Folded')
+    execute 'highlight LineNr           ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg='.s:silver      | call format#FormatHighlightGroup('LineNr')
+    execute 'highlight FoldColumn       ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg='.s:silver      | call format#FormatHighlightGroup('FoldColumn')
+    execute 'highlight Folded           ctermbg=234  ctermfg=242  guibg='.s:black.'      guifg='.s:silver      | call format#FormatHighlightGroup('Folded')
              highlight MatchParen       ctermbg=NONE ctermfg=132  guibg=NONE             guifg=#af5f87         | call format#FormatHighlightGroup('MatchParen')
-
              highlight Comment          ctermbg=NONE ctermfg=242  guibg=NONE             guifg=#6c6c6c         | call format#FormatHighlightGroup('Comment')
              highlight Conceal          ctermbg=NONE ctermfg=250  guibg=NONE             guifg=#bcbcbc         | call format#FormatHighlightGroup('Conceal')
              highlight Constant         ctermbg=NONE ctermfg=137  guibg=NONE             guifg=#af875f         | call format#FormatHighlightGroup('Constant')
              highlight Error            ctermbg=NONE ctermfg=131  guibg=NONE             guifg=#af5f5f         | call format#FormatHighlightGroup('Error')
              highlight Identifier       ctermbg=NONE ctermfg=67   guibg=NONE             guifg=#5f87af         | call format#FormatHighlightGroup('Identifier')
              highlight Ignore           ctermbg=NONE ctermfg=NONE guibg=NONE             guifg=NONE            | call format#FormatHighlightGroup('Ignore')
-
              highlight PreProc          ctermbg=NONE ctermfg=66   guibg=NONE             guifg=#5f8787         | call format#FormatHighlightGroup('PreProc')
              highlight Special          ctermbg=NONE ctermfg=65   guibg=NONE             guifg=#5f875f         | call format#FormatHighlightGroup('Special')
              highlight Delimiter        ctermbg=NONE ctermfg=65   guibg=NONE             guifg=#5f875f         | call format#FormatHighlightGroup('Delimiter')
