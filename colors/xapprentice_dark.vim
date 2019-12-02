@@ -27,7 +27,6 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:lightyellow = '#ceb46c'
         let s:darkyellow = '#b29c5e'
         let s:darkgray = '#2f3334'
-        let s:purple = '#474045'
         let s:silver = '#7a7a7a'
         let s:chrome = '#31363b'
         let s:metal = '#656767'
@@ -38,7 +37,6 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:lightyellow = '#ffdf87'
         let s:darkyellow = '#ffdf87'
         let s:darkgray = '#3a3a3a'
-        let s:purple = '#8787af'
         let s:silver = '#6c6c6c'
         let s:chrome = '#3a3a3a'
         let s:metal = '#626262'
@@ -68,7 +66,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     execute 'highlight Pmenu            ctermbg=237  ctermfg=250  guibg='.s:chrome.'     guifg=#bcbcbc'        | call format#FormatHighlightGroup('Pmenu')
              highlight PmenuSbar        ctermbg=241  ctermfg=NONE guibg=#626262          guifg=NONE            | call format#FormatHighlightGroup('PmenuSbar')
              highlight PmenuSel         ctermbg=103  ctermfg=235  guibg=#8787af          guifg=#1c1c1c         | call format#FormatHighlightGroup('PmenuSel')
-    execute 'highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg='.s:purple.'     guifg='.s:purple      | call format#FormatHighlightGroup('PmenuThumb')
+             highlight PmenuThumb       ctermbg=66   ctermfg=66   guibg=#3a3a3a          guifg=#3a3a3a         | call format#FormatHighlightGroup('PmenuThumb')
              highlight ErrorMsg         ctermbg=NONE ctermfg=131  guibg=NONE             guifg=#af5f5f         | call format#FormatHighlightGroup('ErrorMsg')
     execute 'highlight ModeMsg          ctermbg=108  ctermfg=235  guibg=#5f87af          guifg='.s:background  | call format#FormatHighlightGroup('ModeMsg')
              highlight MoreMsg          ctermbg=NONE ctermfg=66   guibg=NONE             guifg=#5f8787         | call format#FormatHighlightGroup('MoreMsg')
