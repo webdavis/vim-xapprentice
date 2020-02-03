@@ -26,7 +26,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:black = '#1c1e1f'
         let s:lightyellow = '#ceb46c'
         let s:darkyellow = '#b29c5e'
-        let s:darkgray = '#2f3334'
+        let s:spacegray = '#2e3442'
         let s:silver = '#7a7a7a'
         let s:chrome = '#31363b'
         let s:metal = '#656767'
@@ -36,7 +36,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
         let s:black = '#1c1c1c'
         let s:lightyellow = '#ffdf87'
         let s:darkyellow = '#ffdf87'
-        let s:darkgray = '#3a3a3a'
+        let s:spacegray = '#3a3a3a'
         let s:silver = '#6c6c6c'
         let s:chrome = '#3a3a3a'
         let s:metal = '#626262'
@@ -137,7 +137,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     " Requires neoclide/coc.nvim to be installed.
     if exists('g:did_coc_loaded')
         execute 'highlight CocHighlightText      ctermbg=235  ctermfg=32    guibg='.s:background.'  guifg=#0087d7'        | call format#FormatHighlightGroup('CocHighlightText')
-        execute 'highlight CocFloating           ctermbg=237  ctermfg=250   guibg='.s:darkgray.'    guifg=#bcbcbc'        | call format#FormatHighlightGroup('CocFloating')
+        execute 'highlight CocFloating           ctermbg=237  ctermfg=250   guibg='.s:spacegray.'    guifg=#bcbcbc'        | call format#FormatHighlightGroup('CocFloating')
         execute 'highlight CocCodeLens           ctermbg=NONE ctermfg=241   guibg=NONE              guifg='.s:metal       | call format#FormatHighlightGroup('CocCodeLens')
         execute 'highlight CocInfoSign           ctermbg=234  ctermfg=68    guibg='.s:black.'       guifg=#5f87d7'        | call format#FormatHighlightGroup('CocInfoSign')
                  highlight CocInfoVirtualText    ctermbg=NONE ctermfg=68    guibg=NONE              guifg=#5f87d7         | call format#FormatHighlightGroup('CocInfoVirtualText')
