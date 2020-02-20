@@ -153,6 +153,13 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
                  highlight CocErrorHighlight     ctermbg=95   ctermfg=232   guibg=#875f5f           guifg=#080808         | call format#FormatHighlightGroup('CocErrorHighlight')
         " Provided by the extension coc-highlight.
         execute 'highlight HighlightedyankRegion ctermbg=108  ctermfg=235   guibg=#87af87           guifg='.s:background  | call format#FormatHighlightGroup('HighlightedyankRegion')
+
+        " Provided by the extension coc-git.
+        execute 'highlight CocAddedSign          ctermbg=234  ctermfg=65    guibg='.s:black.'       guifg=#5f875f'        | call format#FormatHighlightGroup('SignifySignAdd')
+        execute 'highlight CocRemovedSign        ctermbg=234  ctermfg=132   guibg='.s:black.'       guifg=#af5f87'        | call format#FormatHighlightGroup('SignifySignDelete')
+        execute 'highlight CocChangedSign        ctermbg=234  ctermfg=67    guibg='.s:black.'       guifg=#5f87af'        | call format#FormatHighlightGroup('SignifySignChange')
+                 highlight link CocTopRemovedSign    CocRemovedSign
+                 highlight link CocChangeRemovedSign CocChangedSign
     endif
 
     if exists('g:loaded_quick_scope')
