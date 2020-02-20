@@ -81,6 +81,13 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
         " Provided by the extension coc-highlight.
         highlight HighlightedyankRegion ctermbg=152  ctermfg=237  guibg=#afd7d7 guifg=#3a3a3a | call format#FormatHighlightGroup('HighlightedyankRegion')
+
+        " Provided by the extension coc-git.
+        execute 'highlight CocAddedSign          ctermbg=255  ctermfg=29   guibg=' . s:lightgray . ' guifg=#00875f'  | call format#FormatHighlightGroup('CocAddedSign')
+        execute 'highlight CocRemovedSign        ctermbg=255  ctermfg=210  guibg=' . s:lightgray . ' guifg=#ff8787'  | call format#FormatHighlightGroup('CocRemovedSign')
+        execute 'highlight CocChangedSign        ctermbg=255  ctermfg=33   guibg=' . s:lightgray . ' guifg=#0087ff'  | call format#FormatHighlightGroup('CocChangedSign')
+                 highlight link CocTopRemovedSign    CocRemovedSign
+                 highlight link CocChangeRemovedSign CocChangedSign
     endif
 
     " Requires unblevable/quick-scope to be installed.
