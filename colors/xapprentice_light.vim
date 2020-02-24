@@ -21,14 +21,12 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     set background=light
 
     if (exists('$COLORTERM') && $COLORTERM =~? 'truecolor' && has('termguicolors') && &g:termguicolors)
-        let s:darkyellow = '#e5c23c'
         let s:lightyellow = '#ffe37b'
         let s:lightblue = '#c7e3ff'
         " Leaving this because I go back and forth on changing it.
         let s:lightgray = '#e4e4e4'
         highlight Operator guibg=#ebefff guifg=#005faf | call format#FormatHighlightGroup('Operator')
     else
-        let s:darkyellow = '#dfaf00'
         let s:lightyellow = '#ffdf5f'
         let s:lightblue = '#5fafff'
         let s:lightgray = '#e4e4e4'
@@ -134,7 +132,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight DiffText         ctermbg=215  ctermfg=236  guibg=#ffaf5f guifg=#303030 | call format#FormatHighlightGroup('DiffText')
 
     highlight IncSearch        ctermbg=211  ctermfg=236  guibg=#ff87af guifg=#303030 | call format#FormatHighlightGroup('IncSearch')
-    execute 'highlight Search ctermbg=253 ctermfg=236  guibg=' . s:darkyellow . ' guifg=#303030' | call format#FormatHighlightGroup('Search')
+    highlight Search           ctermbg=222  ctermfg=236  guibg=#ffdf87 guifg=#303030 | call format#FormatHighlightGroup('Search')
 
     highlight Directory        ctermbg=NONE ctermfg=33   guibg=NONE    guifg=#0087ff | call format#FormatHighlightGroup('Directory')
 
