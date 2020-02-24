@@ -82,7 +82,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
 
         " Provided by the extension coc-git.
         execute 'highlight CocAddedSign          ctermbg=255  ctermfg=29   guibg=' . s:lightgray . ' guifg=#00875f'  | call format#FormatHighlightGroup('CocAddedSign')
-        execute 'highlight CocRemovedSign        ctermbg=255  ctermfg=210  guibg=' . s:lightgray . ' guifg=#ff8787'  | call format#FormatHighlightGroup('CocRemovedSign')
+        execute 'highlight CocRemovedSign        ctermbg=255  ctermfg=88   guibg=' . s:lightgray . ' guifg=#870000'  | call format#FormatHighlightGroup('CocRemovedSign')
         execute 'highlight CocChangedSign        ctermbg=255  ctermfg=33   guibg=' . s:lightgray . ' guifg=#0087ff'  | call format#FormatHighlightGroup('CocChangedSign')
                  highlight link CocTopRemovedSign    CocRemovedSign
                  highlight link CocChangeRemovedSign CocChangedSign
