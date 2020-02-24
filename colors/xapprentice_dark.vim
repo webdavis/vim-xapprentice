@@ -414,6 +414,8 @@ let s:links = [
         \ ['diffOnly', 'WarningMsg'],
         \ ['diffRemoved', 'ErrorMsg'],
         \ ['diffAdded', 'String'],
+        \ ['vimIsCommand', 'Statement'],
+        \ ['vimFunction', 'FunctionStatement'],
         \ ]
 
 augroup Xapprentice
