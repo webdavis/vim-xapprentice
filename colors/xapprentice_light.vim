@@ -418,7 +418,7 @@ let s:links = [
         \ ['diffIsA', 'WarningMsg'],
         \ ['diffNoEOL', 'WarningMsg'],
         \ ['diffOnly', 'WarningMsg'],
-        \ ['diffRemoved', 'ErrorMsg'],
+        \ ['diffRemoved', 'Error'],
         \ ['diffAdded', 'String'],
         \ ['vimIsCommand', 'Statement'],
         \ ['vimFunction', 'FunctionStatement'],
