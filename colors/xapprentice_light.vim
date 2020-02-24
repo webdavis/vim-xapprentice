@@ -98,7 +98,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     highlight ModeMsg          ctermbg=67   ctermfg=15   guibg=#5f87af guifg=#ffffff | call format#FormatHighlightGroup('ModeMsg')
     highlight MoreMsg          ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call format#FormatHighlightGroup('MoreMsg')
     highlight Question         ctermbg=NONE ctermfg=66   guibg=NONE    guifg=#5f8787 | call format#FormatHighlightGroup('Question')
-    highlight WarningMsg       ctermbg=NONE ctermfg=215  guibg=NONE    guifg=#ffaf5f | call format#FormatHighlightGroup('WarningMsg')
+    highlight WarningMsg       ctermbg=222  ctermfg=236  guibg=#ffdf87 guifg=#303030 | call format#FormatHighlightGroup('WarningMsg')
 
     highlight TabLine          ctermbg=248  ctermfg=236  guibg=#a8a8a8 guifg=#303030 | call format#FormatHighlightGroup('TabLine')
     highlight TabLineFill      ctermbg=249  ctermfg=236  guibg=#b2b2b2 guifg=#303030 | call format#FormatHighlightGroup('TabLineFill')
