@@ -254,6 +254,11 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
              highlight link Lf_hl_previewTitle       Statusline
   endif
 
+  if exists(':AsyncTask') != 0
+    highlight AsyncRunSuccess ctermfg=108 guifg=#87af87
+    highlight AsyncRunFailure ctermfg=222 guifg=#ceb46c
+  endif
+
   if has('gui_running')
              highlight SpellBad   ctermbg=230 ctermfg=250 guibg=NONE    guifg=#bcbcbc     guisp=#af5f87 | call format#FormatHighlightGroup('SpellBad', 'undercurl')
              highlight SpellCap   ctermbg=73  ctermfg=250 guibg=NONE    guifg=#bcbcbc     guisp=#5fafaf | call format#FormatHighlightGroup('SpellCap', 'undercurl')
