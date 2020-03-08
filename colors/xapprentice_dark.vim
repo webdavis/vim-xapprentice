@@ -255,8 +255,8 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
   endif
 
   if exists(':AsyncTask') != 0
-    highlight AsyncRunSuccess ctermfg=108 guifg=#87af87
-    highlight AsyncRunFailure ctermfg=222 guifg=#ceb46c
+    highlight AsyncRunSuccess ctermbg=NONE ctermfg=108 guibg=NONE guifg=#87af87 | call format#FormatHighlightGroup('AsyncRunSuccess')
+    highlight AsyncRunFailure ctermbg=NONE ctermfg=131 guibg=NONE guifg=#af5f5f | call format#FormatHighlightGroup('AsyncRunFailure')
   endif
 
   if has('gui_running')
