@@ -247,7 +247,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
              highlight link Lf_hl_rgLineNumber       Constant
              highlight link Lf_hl_rgLineNumber2      Folded
              highlight link Lf_hl_rgColumnNumber     Constant
-             highlight      Lf_hl_rgHighlight        ctermbg=NONE ctermfg=232  guibg=#5f8787      guifg=#080808
+    execute 'highlight      Lf_hl_rgHighlight        ctermbg=248  ctermfg=232  guibg=#a8a8a8      guifg='.s:background
              highlight link Lf_hl_gtagsFileName      Directory
              highlight link Lf_hl_gtagsLineNumber    Constant
              highlight      Lf_hl_gtagsHighlight     ctermbg=NONE ctermfg=66   guibg=NONE         guifg=#5f8787
