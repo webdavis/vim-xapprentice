@@ -37,7 +37,7 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     execute 'highlight LineNr     ctermbg=255  ctermfg=245  guibg=' . s:lightgray . ' guifg=#8a8a8a' | call format#FormatHighlightGroup('LineNr')
     execute 'highlight FoldColumn ctermbg=255  ctermfg=242  guibg=' . s:lightgray . ' guifg=#6c6c6c' | call format#FormatHighlightGroup('FoldColumn')
     execute 'highlight Folded     ctermbg=255  ctermfg=242  guibg=' . s:lightgray . ' guifg=#6c6c6c' | call format#FormatHighlightGroup('Folded')
-    highlight MatchParen       ctermbg=NONE ctermfg=129  guibg=NONE    guifg=#af00ff | call format#FormatHighlightGroup('MatchParen')
+    highlight MatchParen       ctermbg=92   ctermfg=147  guibg=#8700d7 guifg=#afafff | call format#FormatHighlightGroup('MatchParen')
 
     highlight Comment          ctermbg=NONE ctermfg=243  guibg=NONE    guifg=#767676 | call format#FormatHighlightGroup('Comment')
     highlight Conceal          ctermbg=NONE ctermfg=15   guibg=NONE    guifg=#ffffff | call format#FormatHighlightGroup('Conceal')
