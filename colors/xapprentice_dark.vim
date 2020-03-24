@@ -194,28 +194,28 @@ if $TERM =~? '256' || &t_Co >= 256 || has('gui_running')
     execute 'highlight      Lf_hl_popup_inputText    ctermbg=237  ctermfg=250  guibg='.s:chrome.' guifg=#bcbcbc'
     execute 'highlight      Lf_hl_popup_window       ctermbg=237  ctermfg=250  guibg='.s:chrome.' guifg=#bcbcbc'
     execute 'highlight      Lf_hl_popup_blank        ctermbg=237  ctermfg=250  guibg='.s:chrome.' guifg=#bcbcbc'
-             highlight      Lf_hl_popup_cursor       ctermbg=242  ctermfg=NONE guibg=#6c6c6c      guifg=NONE    
-             highlight      Lf_hl_popup_prompt       ctermbg=NONE ctermfg=172  guibg=NONE         guifg=#d78700 
-             highlight      Lf_hl_popup_lineInfo     ctermbg=188  ctermfg=237  guibg=#dfdfdf      guifg=#3a3a3a 
-             highlight      Lf_hl_popup_total        ctermbg=66   ctermfg=232  guibg=#5f8787      guifg=#080808 
+             highlight      Lf_hl_popup_cursor       ctermbg=242  ctermfg=NONE guibg=#6c6c6c      guifg=NONE
+             highlight      Lf_hl_popup_prompt       ctermbg=NONE ctermfg=172  guibg=NONE         guifg=#d78700
+             highlight      Lf_hl_popup_lineInfo     ctermbg=188  ctermfg=237  guibg=#dfdfdf      guifg=#3a3a3a
+             highlight      Lf_hl_popup_total        ctermbg=66   ctermfg=232  guibg=#5f8787      guifg=#080808
              highlight      Lf_hl_popup_spin         ctermbg=NONE ctermfg=131  guibg=NONE         guifg=#af5f5f
-             highlight      Lf_hl_cursorline         ctermbg=NONE ctermfg=220  guibg=NONE         guifg=#ffdf00 
+             highlight      Lf_hl_cursorline         ctermbg=NONE ctermfg=220  guibg=NONE         guifg=#eeeeee     | call format#FormatHighlightGroup('Lf_hl_cursorline')
              highlight      Lf_hl_selection          ctermbg=72   ctermfg=NONE guibg=#5faf87      guifg=#080808
              highlight      Lf_hl_match              ctermbg=NONE ctermfg=42   guibg=NONE         guifg=#00d787
              highlight      Lf_hl_match0             ctermbg=NONE ctermfg=48   guibg=NONE         guifg=SpringGreen
-             highlight      Lf_hl_match1             ctermbg=NONE ctermfg=214  guibg=NONE         guifg=#ffaf00 
-             highlight      Lf_hl_match2             ctermbg=NONE ctermfg=81   guibg=NONE         guifg=#5fd7ff 
-             highlight      Lf_hl_match3             ctermbg=NONE ctermfg=203  guibg=NONE         guifg=#ff7272 
-             highlight      Lf_hl_match4             ctermbg=NONE ctermfg=133  guibg=NONE         guifg=#af5faf 
-             highlight      Lf_hl_match4             ctermbg=NONE ctermfg=133  guibg=NONE         guifg=#af5faf 
-             highlight      Lf_hl_popup_normalMode   ctermbg=145  ctermfg=232  guibg=#afafaf      guifg=#080808 
-             highlight      Lf_hl_popup_inputMode    ctermbg=232  ctermfg=110  guibg=#8fafd7      guifg=#080808 
-             highlight      Lf_hl_popup_category     ctermbg=240  ctermfg=253  guibg=#585858      guifg=#dadada 
-             highlight      Lf_hl_popup_fuzzyMode    ctermbg=248  ctermfg=234  guibg=#a8a8a8      guifg=#1c1c1c 
-             highlight      Lf_hl_popup_nameOnlyMode ctermbg=179  ctermfg=232  guibg=#cbb370      guifg=#080808 
-             highlight      Lf_hl_popup_fullPathMode ctermbg=248  ctermfg=234  guibg=#a8a8a8      guifg=#1c1c1c 
-             highlight      Lf_hl_popup_regexMode    ctermbg=108  ctermfg=232  guibg=#87af87      guifg=#080808 
-             highlight      Lf_hl_popup_cwd          ctermbg=252  ctermfg=234  guibg=#d0d0d0      guifg=#1c1c1c 
+             highlight      Lf_hl_match1             ctermbg=NONE ctermfg=214  guibg=NONE         guifg=#ffaf00
+             highlight      Lf_hl_match2             ctermbg=NONE ctermfg=81   guibg=NONE         guifg=#5fd7ff
+             highlight      Lf_hl_match3             ctermbg=NONE ctermfg=203  guibg=NONE         guifg=#ff7272
+             highlight      Lf_hl_match4             ctermbg=NONE ctermfg=133  guibg=NONE         guifg=#af5faf
+             highlight      Lf_hl_match4             ctermbg=NONE ctermfg=133  guibg=NONE         guifg=#af5faf
+             highlight      Lf_hl_popup_normalMode   ctermbg=145  ctermfg=232  guibg=#afafaf      guifg=#080808
+             highlight      Lf_hl_popup_inputMode    ctermbg=232  ctermfg=110  guibg=#8fafd7      guifg=#080808
+             highlight      Lf_hl_popup_category     ctermbg=240  ctermfg=253  guibg=#585858      guifg=#dadada
+             highlight      Lf_hl_popup_fuzzyMode    ctermbg=248  ctermfg=234  guibg=#a8a8a8      guifg=#1c1c1c
+             highlight      Lf_hl_popup_nameOnlyMode ctermbg=179  ctermfg=232  guibg=#cbb370      guifg=#080808
+             highlight      Lf_hl_popup_fullPathMode ctermbg=248  ctermfg=234  guibg=#a8a8a8      guifg=#1c1c1c
+             highlight      Lf_hl_popup_regexMode    ctermbg=108  ctermfg=232  guibg=#87af87      guifg=#080808
+             highlight      Lf_hl_popup_cwd          ctermbg=252  ctermfg=234  guibg=#d0d0d0      guifg=#1c1c1c
              highlight link Lf_hl_bufNumber          Constant
              highlight link Lf_hl_bufIndicators      Statement
              highlight link Lf_hl_bufModified        String
